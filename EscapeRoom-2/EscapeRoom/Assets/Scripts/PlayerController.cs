@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
     Rigidbody rb;
     public Camera camera;
 
+    public Text interactableName;
+
+    public float minDist;
     public float speed;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         playerMove();
         cameraMove();
+        checkForHit();
     }
 
     void playerMove()
@@ -32,8 +37,6 @@ public class PlayerController : MonoBehaviour {
         vertMov = Input.GetAxis("Vertical");
 
         rb.velocity = transform.forward * speed * vertMov;
-        //rb.transform.Rotate(new Vector3(0f, horizMov * 3, 0f));
-        //rb.transform.Rotate(new Vector3(0, 2, 0));
     }
 
     void cameraMove()
@@ -50,5 +53,21 @@ public class PlayerController : MonoBehaviour {
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
         }
+    }
+
+    void checkForHit()
+    {
+        Ray ray = new Ray(camera.transform.position, camera.transform.forward);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, minDist))
+        {
+            if(hit.collider.tag == "Interactable")
+            {
+                print("SUPER");
+                //Interactable interactable = hit.collider.GetComponent<Interactable>();
+                interactableName.text = hit.collider.name;
+            }
+        } 
     }
 }
