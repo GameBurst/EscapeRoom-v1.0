@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 20545576798445558}
-  speed: 5
+  speed: 7
   speedH: 4
   speedV: 4
 --- !u!136 &136543594349714572
