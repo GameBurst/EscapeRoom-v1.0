@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 
     Interactable interactable;
 
+    public Vector3 spawnPosition;
+
     public float minDist;
     public float speed;
     public float speedH = 2.0f;
@@ -23,12 +25,16 @@ public class PlayerController : MonoBehaviour {
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    private float horizMov, vertMov;   
+    private float horizMov, vertMov;
+
+    private bool canPlace;
     
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType <Joystick>();
+        canPlace = false;
+        // spawnPosition = null;
 	}
 	
 	// Update is called once per frame
@@ -36,31 +42,21 @@ public class PlayerController : MonoBehaviour {
         playerMove();
         cameraMove();
         checkForHit();
+        tempTake();
         tempSpawn();
     }
 
     void playerMove()
     {
-<<<<<<< HEAD
         /*rb.velocity = new Vector3((joystick.Horizontal * speed) + (Input.GetAxis("Horizontal") * speed),
                                     rb.velocity.y, 
                                    (joystick.Vertical * speed) + (Input.GetAxis("Vertical") * speed));*/ //pt telefon e buna asta, dar daca rotesti playerul la 180 de grade spre ex si apesi w se duce cu spatele
         rb.velocity = transform.forward * speed * Input.GetAxis("Vertical");
-=======
-
-        rb.velocity = new Vector3((joystick.Horizontal * speed) + (Input.GetAxis("Horizontal") * speed),
-                                  rb.velocity.y, 
-                                  (joystick.Vertical * speed) + (Input.GetAxis("Vertical") * speed));
->>>>>>> 96fe34625cda0bd51f1b696efd06a5a2e610af82
     }
 
     void cameraMove()
     {
-<<<<<<< HEAD
         if (Input.GetButton("Fire1"))// && (Input.touchCount > 1))// <-Pentru Android se decomenteaza si se introduce sub acelasi if
-=======
-        if (Input.GetButton("Fire1")) //&& (Input.touchCount > 1)) <-Pentru Android se decomenteaza si se introduce sub acelasi if
->>>>>>> 96fe34625cda0bd51f1b696efd06a5a2e610af82
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
             
@@ -85,24 +81,38 @@ public class PlayerController : MonoBehaviour {
             {
                 //print("SUPER");
                 interactable = hit.collider.GetComponent<Interactable>();
-                interactable.setTexture(inventorySlots[0]);
-                interactable.popOut();
                 interactableName.text = hit.collider.name;
             }
+
+            interactableName.text = hit.collider.name;
+            canPlace = true;
+            spawnPosition = hit.point;
         }
         else
         {
+            //interactable = null;
             interactableName.text = " ";
+            canPlace = false;
+            //spawnPosition = null;
+        }
+    }
+
+    void tempTake()
+    {
+        if(interactable != null && Input.GetKeyDown(KeyCode.E))
+        {
+            interactable.take(inventorySlots[0]);
         }
     }
 
     void tempSpawn()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if(interactable != null)
             {
-                interactable.spawn(inventorySlots[0], transform.position, transform.rotation);
+                interactable.spawn(inventorySlots[0], spawnPosition, transform.rotation);
+                interactable = null;
             }
         }
     }

@@ -15,15 +15,11 @@ public class Interactable : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    public void setTexture(Image image)
+    public void take(Image image)
     {
         image.sprite = icon;
-        print("Am setat");
-    }
-
-    public void popOut()
-    {
         obj.SetActive(false);
+        print("Am setat");
     }
 
     public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation)
