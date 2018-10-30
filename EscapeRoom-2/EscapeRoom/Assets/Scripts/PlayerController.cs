@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     Rigidbody rb;
     public Camera camera;
 
+    protected Joystick joystick;
+
     public Text interactableName;
 
     public float minDist;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
+        joystick = FindObjectOfType <Joystick>();
 	}
 	
 	// Update is called once per frame
@@ -33,15 +36,15 @@ public class PlayerController : MonoBehaviour {
 
     void playerMove()
     {
-        //horizMov = Input.GetAxisRaw("Horizontal");
-        vertMov = Input.GetAxis("Vertical");
 
-        rb.velocity = transform.forward * speed * vertMov;
+        rb.velocity = new Vector3((joystick.Horizontal * speed) + (Input.GetAxis("Horizontal") * speed),
+                                  rb.velocity.y, 
+                                  (joystick.Vertical * speed) + (Input.GetAxis("Vertical") * speed));
     }
 
     void cameraMove()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("Fire1")) //&& (Input.touchCount > 1)) <-Pentru Android se decomenteaza si se introduce sub acelasi if
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
             
