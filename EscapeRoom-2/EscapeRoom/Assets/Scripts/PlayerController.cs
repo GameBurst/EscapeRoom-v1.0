@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType <Joystick>();
+
         canPlace = false;
         noPos = new Vector3(0f, 0f, 0f);
         spawnPosition = noPos;
@@ -55,25 +56,30 @@ public class PlayerController : MonoBehaviour {
 
     void playerMove()
     {
-        /*rb.velocity = new Vector3((joystick.Horizontal * speed) + (Input.GetAxis("Horizontal") * speed),
-                                    rb.velocity.y, 
-                                   (joystick.Vertical * speed) + (Input.GetAxis("Vertical") * speed));*/ //pt telefon e buna asta, dar daca rotesti playerul la 180 de grade spre ex si apesi w se duce cu spatele
-        rb.velocity = transform.forward * speed * Input.GetAxis("Vertical");
+        
+        rb.velocity = joystick.Vertical * speed * transform.forward + joystick.Horizontal * speed * transform.right;
+
+        if(rb.velocity.x == 0 && rb.velocity.y == 0) // acest if si functia subordonata lui sunt pc only(testing)
+        {
+            rb.velocity = (transform.forward * speed * Input.GetAxis("Vertical")) + (transform.right * speed * Input.GetAxis("Horizontal"));
+        }
+
     }
 
     void cameraMove()
     {
-        if (Input.GetButton("Fire1"))// && (Input.touchCount > 1))// <-Pentru Android se decomenteaza si se introduce sub acelasi if
+          //if(((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) pt android
+        if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
-            float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
-            
-            yaw -= xMoveDist;
+                float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
 
-            if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                pitch += yMoveDist;
+                yaw -= xMoveDist;
 
-            camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-            rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+                if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+                    pitch += yMoveDist;
+
+                camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+                rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
         }
     }
 
