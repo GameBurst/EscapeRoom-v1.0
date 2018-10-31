@@ -24,7 +24,9 @@ public class Interactable : MonoBehaviour {
 
     public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation)
     {
-        Instantiate(obj, spawnCoords, rotation);
+        Instantiate(obj);
+        obj.transform.position = spawnCoords;
+        print(obj.transform.position);
         obj.SetActive(true);
         image.sprite = null;
     }

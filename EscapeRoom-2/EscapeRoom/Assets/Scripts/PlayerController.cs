@@ -14,9 +14,12 @@ public class PlayerController : MonoBehaviour {
 
     public Image[] inventorySlots;
 
+    public Interactable[] intObjects;
+
     Interactable interactable;
 
     public Vector3 spawnPosition;
+    private Vector3 noPos;
 
     public float minDist;
     public float speed;
@@ -34,7 +37,9 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType <Joystick>();
         canPlace = false;
-        // spawnPosition = null;
+        noPos = new Vector3(0f, 0f, 0f);
+        spawnPosition = noPos;
+        intObjects = new Interactable[7];
 	}
 	
 	// Update is called once per frame
@@ -43,7 +48,7 @@ public class PlayerController : MonoBehaviour {
         cameraMove();
         checkForHit();
         tempTake();
-        tempSpawn();
+        //tempSpawn();
     }
 
     void playerMove()
@@ -90,10 +95,11 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            //interactable = null;
+            interactable = null;
+            //spawnPosition = transform.position + transform.forward * minDist;
             interactableName.text = " ";
             canPlace = false;
-            //spawnPosition = null;
+            spawnPosition = noPos;
         }
     }
 
@@ -101,19 +107,26 @@ public class PlayerController : MonoBehaviour {
     {
         if(interactable != null && Input.GetKeyDown(KeyCode.E))
         {
-            interactable.take(inventorySlots[0]);
+            for(int i = 0; i < intObjects.Length; ++i)
+            {
+                if(intObjects[i] == null)
+                {
+                    intObjects[i] = interactable;
+                    interactable.take(inventorySlots[i]);
+                    return;
+                }
+            }
+            
         }
     }
 
-    void tempSpawn()
+    public void removeObject(int index)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if(intObjects[index] != null && spawnPosition != noPos)
         {
-            if(interactable != null)
-            {
-                interactable.spawn(inventorySlots[0], spawnPosition, transform.rotation);
-                interactable = null;
-            }
+            intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation);
+            intObjects[index] = null;
+            return;
         }
     }
 }
