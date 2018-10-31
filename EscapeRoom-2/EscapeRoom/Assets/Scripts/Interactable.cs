@@ -1,18 +1,39 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour {
-
-    public float radius = 3f;
 
     public Sprite icon;
 
     public GameObject obj;
 
-    private void OnDrawGizmosSelected()
+    public Camera camera;
+
+    public float radius = 3f;
+    public float minDist = 5f;
+
+    private void Update()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        if (Input.GetMouseButtonDown(0))
+        {
+            checkIfTouched();
+        }
+    }
+
+    private void checkIfTouched()
+    {
+        Ray ray = new Ray(camera.transform.position, camera.transform.forward);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, minDist))
+        {
+            if(hit.collider.name == obj.name)
+            {
+                PlayerController.plsTake = true;
+                return;
+            }
+        }
     }
 
     public void take(Image image)
@@ -29,5 +50,13 @@ public class Interactable : MonoBehaviour {
         print(obj.transform.position);
         obj.SetActive(true);
         image.sprite = null;
+    }
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

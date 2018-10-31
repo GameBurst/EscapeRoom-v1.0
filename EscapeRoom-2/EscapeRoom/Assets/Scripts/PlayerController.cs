@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour {
     private float horizMov, vertMov;
 
     private bool canPlace;
-    
+    public static bool plsTake;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour {
         noPos = new Vector3(0f, 0f, 0f);
         spawnPosition = noPos;
         intObjects = new Interactable[7];
+        plsTake = false;
 	}
 	
 	// Update is called once per frame
@@ -103,9 +105,9 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void tempTake()
+    public void tempTake()
     {
-        if(interactable != null && Input.GetKeyDown(KeyCode.E))
+        if(interactable != null && (Input.GetKeyDown(KeyCode.E) || plsTake))
         {
             for(int i = 0; i < intObjects.Length; ++i)
             {
@@ -113,10 +115,11 @@ public class PlayerController : MonoBehaviour {
                 {
                     intObjects[i] = interactable;
                     interactable.take(inventorySlots[i]);
+                    plsTake = false;
                     return;
                 }
             }
-            
+            plsTake = false;
         }
     }
 

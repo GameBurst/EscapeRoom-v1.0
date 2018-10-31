@@ -143,9 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 126280066}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &126280068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -279,6 +281,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!20 &205032363 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20545576798445558, guid: bd38c416086c4fa4da0f9d511e64284c,
+    type: 2}
+  m_PrefabInternal: {fileID: 656148002}
 --- !u!1 &210404190
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,9 +631,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 481696561}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &481696563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -752,9 +761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 589425410}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &589425412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1835,9 +1846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 1344108128}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!1001 &1419095961
 Prefab:
   m_ObjectHideFlags: 0
@@ -2086,9 +2099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 1527088264}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &1527088266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2358,9 +2373,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 1791357926}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &1791357928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2458,9 +2475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 1810417509}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &1810417511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2728,9 +2747,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d989882b9acf6554fb84940631c5a662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
   icon: {fileID: 21300000, guid: f1e8ad2543497fe419e7755e5560f548, type: 3}
   obj: {fileID: 1886646286}
+  camera: {fileID: 205032363}
+  radius: 3
+  minDist: 5
 --- !u!65 &1886646288
 BoxCollider:
   m_ObjectHideFlags: 0
