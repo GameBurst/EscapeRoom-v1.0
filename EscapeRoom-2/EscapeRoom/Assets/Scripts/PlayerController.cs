@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Camera camera;
 
     protected Joystick joystick;
+    protected int IntialTouchesPosition;
 
     public Text interactableName;
 
@@ -68,10 +69,21 @@ public class PlayerController : MonoBehaviour {
 
     void cameraMove()
     {
-          //if(((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) pt android
-        if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
+        /*
+        for(int i = 0; i < Input.touchCount; ++i)
         {
-                float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
+            if (Input.GetTouch(i).phase == TouchPhase.Began && 
+                Input.GetTouch(i).position.x < 300 && Input.GetTouch(i).position.y < 300)
+            {
+                IntialTouchesPosition = i;
+            }               
+        }
+
+        if (((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f)) && Input.touchCount == 1)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                float xMoveDist = speedH * touch.position.x, yMoveDist = speedV * touch.position.y;
 
                 yaw -= xMoveDist;
 
@@ -80,6 +92,43 @@ public class PlayerController : MonoBehaviour {
 
                 camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
                 rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+            }
+        }
+        else if (((joystick.Horizontal != 0.0f) || (joystick.Vertical != 0.0f)) && Input.touchCount > 1)
+        {
+            for (int i = 0; i < Input.touchCount; ++i)
+            {
+                if(IntialTouchesPosition != i)
+                {
+                    float xMoveDist = speedH * Input.GetTouch(i).position.x;
+                    float yMoveDist = speedV * Input.GetTouch(i).position.y;
+
+                    yaw -= xMoveDist;
+
+                    if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+                        pitch += yMoveDist;
+
+                    camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+                    rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+                }
+            }
+        }
+
+        //Conditii pentru android - > camera sa se miste */
+
+
+
+        if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
+        {
+            float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
+
+            yaw -= xMoveDist;
+
+            if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+                pitch += yMoveDist;
+
+            camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+            rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
         }
     }
 
