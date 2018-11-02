@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour {
 
     private void checkIfTouched()
     {
-        Ray ray = new Ray(camera.transform.position, camera.transform.forward);
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
 
         if(Physics.Raycast(ray, out hit, minDist))
