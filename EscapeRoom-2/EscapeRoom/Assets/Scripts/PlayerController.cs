@@ -72,19 +72,28 @@ public class PlayerController : MonoBehaviour {
 
     void cameraMove()
     {
+<<<<<<< HEAD
+=======
+        /*
+>>>>>>> 480026c119fbc364111709883faaf32d3639e821
         for(int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began && 
                 Input.GetTouch(i).position.x < 300 && Input.GetTouch(i).position.y < 300)
             {
                 IntialTouchesPosition = i;
+<<<<<<< HEAD
             }
+=======
+            }               
+>>>>>>> 480026c119fbc364111709883faaf32d3639e821
         }
 
         if (((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f)) && Input.touchCount == 1)
         {
             foreach (Touch touch in Input.touches)
             {
+<<<<<<< HEAD
                 switch (touch.phase)
                 {
                     // Record initial touch position.
@@ -110,12 +119,24 @@ public class PlayerController : MonoBehaviour {
                         iTouch = new Touch();
                         break;
                 }
+=======
+                float xMoveDist = speedH * touch.position.x, yMoveDist = speedV * touch.position.y;
+
+                yaw -= xMoveDist;
+
+                if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+                    pitch += yMoveDist;
+
+                camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+                rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+>>>>>>> 480026c119fbc364111709883faaf32d3639e821
             }
         }
         else if (((joystick.Horizontal != 0.0f) || (joystick.Vertical != 0.0f)) && Input.touchCount > 1)
         {
             for (int i = 0; i < Input.touchCount; ++i)
             {
+<<<<<<< HEAD
                 Touch touch = Input.GetTouch(i);
                 if (IntialTouchesPosition != i)
                 {
@@ -144,14 +165,35 @@ public class PlayerController : MonoBehaviour {
                             iTouch = new Touch();
                             break;
                     }
+=======
+                if(IntialTouchesPosition != i)
+                {
+                    float xMoveDist = speedH * Input.GetTouch(i).position.x;
+                    float yMoveDist = speedV * Input.GetTouch(i).position.y;
+
+                    yaw -= xMoveDist;
+
+                    if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+                        pitch += yMoveDist;
+
+                    camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+                    rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+>>>>>>> 480026c119fbc364111709883faaf32d3639e821
                 }
             }
         }
 
+<<<<<<< HEAD
         //Conditii pentru android - > camera sa se miste 
 
 
         /*
+=======
+        //Conditii pentru android - > camera sa se miste */
+
+
+
+>>>>>>> 480026c119fbc364111709883faaf32d3639e821
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
