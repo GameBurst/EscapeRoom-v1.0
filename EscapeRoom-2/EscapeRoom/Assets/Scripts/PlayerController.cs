@@ -150,8 +150,8 @@ public class PlayerController : MonoBehaviour {
 
         //Conditii pentru android - > camera sa se miste 
 
-
-        /*
+        
+        
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour {
 
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-        }*/ // Conditie pt miscare pe PC
+        } // Conditie pt miscare pe PC
     }
 
     void checkForHit()
@@ -177,8 +177,9 @@ public class PlayerController : MonoBehaviour {
             {
                 //print("SUPER");
                 interactable = hit.collider.GetComponent<Interactable>();
+                Interactable.objName = interactable.name;
                 interactableName.text = hit.collider.name;
-            }
+            } else Interactable.objName = null;
 
             interactableName.text = hit.collider.name;
             canPlace = true;
@@ -186,8 +187,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
+            
             interactable = null;
-            //spawnPosition = transform.position + transform.forward * minDist;
             interactableName.text = " ";
             canPlace = false;
             spawnPosition = noPos;
