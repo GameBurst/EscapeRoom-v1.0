@@ -10,12 +10,22 @@ public class Interactable : MonoBehaviour {
 
     public Camera camera;
 
-    public float radius = 1f;
+    public float radius = 3f;
     public float minDist = 5f;
+
+    //public static bool lookingAtThis;
+
+    public static string objName;
+
+    private void Start()
+    {
+        //lookingAtThis = false;
+        objName = null;
+    }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && objName == transform.name)
         {
             checkIfTouched();
         }
@@ -23,13 +33,14 @@ public class Interactable : MonoBehaviour {
 
     private void checkIfTouched()
     {
-        Ray ray = new Ray(camera.transform.position, camera.transform.forward);
-        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit = new RaycastHit();
 
         if(Physics.Raycast(ray, out hit, minDist))
         {
             if(hit.collider.name == obj.name)
             {
+                print("o da");
                 PlayerController.plsTake = true;
                 return;
             }
@@ -51,8 +62,6 @@ public class Interactable : MonoBehaviour {
         obj.SetActive(true);
         image.sprite = null;
     }
-
-
 
     private void OnDrawGizmosSelected()
     {
