@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour {
     private float horizMov, vertMov;
     private float lim = 10f;
 
+    private string hitName;
+
     private bool canPlace, directionChosen;
     public static bool plsTake;
 
@@ -150,7 +152,7 @@ public class PlayerController : MonoBehaviour {
 
         //Conditii pentru android - > camera sa se miste 
 
-        /*
+        
         
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
@@ -163,7 +165,7 @@ public class PlayerController : MonoBehaviour {
 
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-        }*/ // Conditie pt miscare pe PC
+        } // Conditie pt miscare pe PC
     }
 
     void checkForHit()
@@ -183,11 +185,12 @@ public class PlayerController : MonoBehaviour {
 
             interactableName.text = hit.collider.name;
             canPlace = true;
+            hitName = hit.collider.name;
             spawnPosition = hit.point;
         }
         else
         {
-            
+            hitName = null;
             interactable = null;
             interactableName.text = " ";
             canPlace = false;
@@ -216,9 +219,9 @@ public class PlayerController : MonoBehaviour {
 
     public void removeObject(int index)
     {
-        if(intObjects[index] != null && spawnPosition != noPos)
+        if(intObjects[index] != null && canPlace)
         {
-            intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation);
+            intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName);
             intObjects[index] = null;
             return;
         }

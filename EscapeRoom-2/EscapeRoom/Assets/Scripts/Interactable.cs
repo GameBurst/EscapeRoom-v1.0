@@ -8,23 +8,29 @@ public class Interactable : MonoBehaviour {
 
     public GameObject obj;
 
+    public GameObject target;
+    //public Animator targetAnimation;
+
     public Camera camera;
 
     public float radius = 3f;
     public float minDist = 5f;
 
-    //public static bool lookingAtThis;
-
     public static string objName;
 
     private void Start()
     {
-        //lookingAtThis = false;
+        //targetAnimation.enabled = false;
         objName = null;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            //targetAnimation.enabled = true;
+            target.GetComponent<Animator>().Play("Usa");
+        }
         if (Input.GetMouseButtonDown(0) && objName == transform.name)
         {
             checkIfTouched();
@@ -54,13 +60,19 @@ public class Interactable : MonoBehaviour {
         print("Am setat");
     }
 
-    public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation)
+    public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
     {
-        Instantiate(obj);
-        obj.transform.position = spawnCoords;
-        print(obj.transform.position);
-        obj.SetActive(true);
-        image.sprite = null;
+        //if(hitName == target.name)
+        //{
+            Instantiate(obj);
+            //targetAnimation.Play();
+            //targetAnimation.enabled = true;
+            obj.transform.position = spawnCoords;
+            print(obj.transform.position);
+            obj.SetActive(true);
+            image.sprite = null;
+       // }
+        
     }
 
     private void OnDrawGizmosSelected()
