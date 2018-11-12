@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour {
 
         //Conditii pentru android - > camera sa se miste 
 
-        
+        /*
         
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour {
 
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-        } // Conditie pt miscare pe PC
+        } */ // Conditie pt miscare pe PC
     }
 
     void checkForHit()

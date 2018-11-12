@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour {
     public GameObject obj;
 
     public GameObject target;
-    //public Animator targetAnimation;
+    public Animator targetAnimator;
 
     public Camera camera;
 
@@ -20,16 +20,15 @@ public class Interactable : MonoBehaviour {
 
     private void Start()
     {
-        //targetAnimation.enabled = false;
+        targetAnimator.enabled = false;
         objName = null;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            //targetAnimation.enabled = true;
-            target.GetComponent<Animator>().Play("Usa");
+            targetAnimator.enabled = true;
         }
         if (Input.GetMouseButtonDown(0) && objName == transform.name)
         {
@@ -62,17 +61,15 @@ public class Interactable : MonoBehaviour {
 
     public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
     {
-        //if(hitName == target.name)
-        //{
-            Instantiate(obj);
-            //targetAnimation.Play();
-            //targetAnimation.enabled = true;
-            obj.transform.position = spawnCoords;
-            print(obj.transform.position);
-            obj.SetActive(true);
+        if(hitName == target.name)
+        {
+            //Instantiate(obj);
+            targetAnimator.enabled = true;
+            //obj.transform.position = spawnCoords;
+            //print(obj.transform.position);
+            //obj.SetActive(true);
             image.sprite = null;
-       // }
-        
+        }
     }
 
     private void OnDrawGizmosSelected()
