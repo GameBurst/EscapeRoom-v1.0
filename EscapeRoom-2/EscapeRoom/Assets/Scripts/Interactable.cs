@@ -30,8 +30,10 @@ public class Interactable : MonoBehaviour {
         {
             targetAnimator.enabled = true;
         }
+
         if (Input.GetMouseButtonDown(0) && objName == transform.name)
         {
+            print("Touching Slot");
             checkIfTouched();
         }
     }
@@ -43,6 +45,8 @@ public class Interactable : MonoBehaviour {
 
         if(Physics.Raycast(ray, out hit, minDist))
         {
+            print(hit.collider.name);
+            print(obj.name);
             if(hit.collider.name == obj.name)
             {
                 print("o da");
@@ -59,9 +63,9 @@ public class Interactable : MonoBehaviour {
         print("Am setat");
     }
 
-    public void spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
+    public bool spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
     {
-        if(hitName == target.name)
+        if (hitName == target.name)
         {
             //Instantiate(obj);
             targetAnimator.enabled = true;
@@ -69,7 +73,10 @@ public class Interactable : MonoBehaviour {
             //print(obj.transform.position);
             //obj.SetActive(true);
             image.sprite = null;
+
+            return true;
         }
+        else return false;
     }
 
     private void OnDrawGizmosSelected()

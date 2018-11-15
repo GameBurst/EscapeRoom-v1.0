@@ -214,15 +214,18 @@ public class PlayerController : MonoBehaviour {
             }
             plsTake = false;
         }
-        plsTake = false;
+        //plsTake = false;
     }
 
     public void removeObject(int index)
     {
         if(intObjects[index] != null && canPlace)
         {
-            intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName);
-            intObjects[index] = null;
+            if(intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName))
+            {
+                intObjects[index] = null;
+            }
+            
             return;
         }
     }
