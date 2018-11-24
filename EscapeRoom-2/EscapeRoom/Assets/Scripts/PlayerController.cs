@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour {
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
+	
+	
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private float horizMov, vertMov;
@@ -97,10 +99,10 @@ public class PlayerController : MonoBehaviour {
                     // Determine direction by comparing the current touch position with the initial one.
                     case TouchPhase.Moved:
                         float xMoveDist = speedH * (iTouch.position.x - touch.position.x), yMoveDist = speedV * (iTouch.position.y - touch.position.y);
-                        yaw -= xMoveDist;
+                        yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
                         if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                            pitch += yMoveDist;
+                            pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
                         camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
                         rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
@@ -131,10 +133,10 @@ public class PlayerController : MonoBehaviour {
                         // Determine direction by comparing the current touch position with the initial one.
                         case TouchPhase.Moved:
                             float xMoveDist = speedH * (iTouch.position.x - touch.position.x), yMoveDist = speedV * (iTouch.position.y - touch.position.y);
-                            yaw -= xMoveDist;
+                            yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
                             if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                                pitch += yMoveDist;
+                                pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
                             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
                             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
@@ -152,20 +154,20 @@ public class PlayerController : MonoBehaviour {
 
         //Conditii pentru android - > camera sa se miste 
 
-        /*
+        
         
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
 
-            yaw -= xMoveDist;
+            yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
             if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                pitch += yMoveDist;
+                pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-        } */ // Conditie pt miscare pe PC
+        }  // Conditie pt miscare pe PC
     }
 
     void checkForHit()
