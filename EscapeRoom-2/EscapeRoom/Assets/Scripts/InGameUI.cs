@@ -16,8 +16,6 @@ public class InGameUI : MonoBehaviour {
     public Dropdown GraphicsDropdown;
     public Toggle MuteUnmuteToggle;
 
-    
-
     void Start()
     {
         //Verifica daca este o sensibilitate a camerei deja setata de jucator
@@ -56,6 +54,10 @@ public class InGameUI : MonoBehaviour {
             MuteUnmuteToggle.isOn = false;
             AudioListener.pause = false;
         }
+
+        GameIsPaused = false;
+        PauseOrResumeIsPressed = false;
+        Time.timeScale = 1f;
     }
 
 
@@ -91,6 +93,7 @@ public class InGameUI : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        PlayerController.isPaused = false;
     }
 
     void Pause ()
@@ -98,6 +101,7 @@ public class InGameUI : MonoBehaviour {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        PlayerController.isPaused = true;
     }
 
     public void SetQuality(int qualityIndex)

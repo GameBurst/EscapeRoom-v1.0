@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Interactable : MonoBehaviour {
+public class Interactable : MonoBehaviour
+{
 
     public Sprite icon;
 
@@ -43,11 +44,11 @@ public class Interactable : MonoBehaviour {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
 
-        if(Physics.Raycast(ray, out hit, minDist))
+        if (Physics.Raycast(ray, out hit, minDist))
         {
             print(hit.collider.name);
             print(obj.name);
-            if(hit.collider.name == obj.name)
+            if (hit.collider.name == obj.name)
             {
                 print("o da");
                 PlayerController.plsTake = true;
@@ -69,6 +70,7 @@ public class Interactable : MonoBehaviour {
         {
             //Instantiate(obj);
             targetAnimator.enabled = true;
+            target.tag = "Untagged";
             //obj.transform.position = spawnCoords;
             //print(obj.transform.position);
             //obj.SetActive(true);

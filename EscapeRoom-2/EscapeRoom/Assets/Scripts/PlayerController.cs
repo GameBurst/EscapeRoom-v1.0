@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour {
     public float speedH = 2.0f;
     public float speedV = 2.0f;
 
-	
-	
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private float horizMov, vertMov;
@@ -39,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     private string hitName;
 
     private bool canPlace, directionChosen;
-    public static bool plsTake;
+    public static bool plsTake, isPaused;
 
 	// Use this for initialization
 	void Start () {
@@ -51,15 +49,18 @@ public class PlayerController : MonoBehaviour {
         spawnPosition = noPos;
         intObjects = new Interactable[7];
         plsTake = false;
+        isPaused = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        playerMove();
-        cameraMove();
-        checkForHit();
-        tempTake();
-        //tempSpawn();
+        if (!isPaused)
+        {
+            playerMove();
+            cameraMove();
+            checkForHit();
+            tempTake();
+        }
     }
 
     void playerMove()
@@ -155,7 +156,7 @@ public class PlayerController : MonoBehaviour {
         //Conditii pentru android - > camera sa se miste 
 
         
-        
+        /*
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
             float xMoveDist = speedH * Input.GetAxis("Mouse X"), yMoveDist = speedV * Input.GetAxis("Mouse Y");
@@ -167,7 +168,7 @@ public class PlayerController : MonoBehaviour {
 
             camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
             rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-        }  // Conditie pt miscare pe PC
+        }*/  // Conditie pt miscare pe PC
     }
 
     void checkForHit()
@@ -183,9 +184,21 @@ public class PlayerController : MonoBehaviour {
                 interactable = hit.collider.GetComponent<Interactable>();
                 Interactable.objName = interactable.name;
                 interactableName.text = hit.collider.name;
-            } else Interactable.objName = null;
+            }
+            else
+            {
+                Interactable.objName = null;
+                if (hit.collider.tag == "Lockable")
+                {
+                    interactableName.text = hit.collider.name + " (Locked)";
+                }
+                else
+                {
+                    interactableName.text = null;
+                }
+            }
 
-            interactableName.text = hit.collider.name;
+            //interactableName.text = hit.collider.name;
             canPlace = true;
             hitName = hit.collider.name;
             spawnPosition = hit.point;
@@ -202,11 +215,11 @@ public class PlayerController : MonoBehaviour {
 
     public void tempTake()
     {
-        if(interactable != null && (Input.GetKeyDown(KeyCode.E) || plsTake))
+        if (interactable != null && (Input.GetKeyDown(KeyCode.E) || plsTake))
         {
-            for(int i = 0; i < intObjects.Length; ++i)
+            for (int i = 0; i < intObjects.Length; ++i)
             {
-                if(intObjects[i] == null)
+                if (intObjects[i] == null)
                 {
                     intObjects[i] = interactable;
                     interactable.take(inventorySlots[i]);
@@ -221,13 +234,13 @@ public class PlayerController : MonoBehaviour {
 
     public void removeObject(int index)
     {
-        if(intObjects[index] != null && canPlace)
+        if (intObjects[index] != null && canPlace)
         {
-            if(intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName))
+            if (intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName))
             {
                 intObjects[index] = null;
             }
-            
+
             return;
         }
     }
