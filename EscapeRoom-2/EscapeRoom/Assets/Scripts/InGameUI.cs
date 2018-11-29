@@ -19,12 +19,13 @@ public class InGameUI : MonoBehaviour {
     void Start()
     {
         //Verifica daca este o sensibilitate a camerei deja setata de jucator
-        if (PlayerPrefs.HasKey("QualityLevel"))
+        if (PlayerPrefs.HasKey("CameraSensibility"))
         {
             SensibilitySlider.value = PlayerPrefs.GetFloat("CameraSensibility");
         }
         else
         {
+            PlayerPrefs.SetFloat("CameraSensibility", 1.0f);
             SensibilitySlider.value = 1.0f;
         }
 

@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 20545576798445558}
   - component: {fileID: 81673399461966312}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Ochi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690828247593744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4500945469968430}
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1545600256454650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.6, z: 0}
+  m_LocalPosition: {x: 0, y: 2.6, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4219008747201454}
@@ -220,9 +220,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 20545576798445558}
+  interactableName: {fileID: 0}
+  inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  intObjects: []
+  spawnPosition: {x: 0, y: 0, z: 0}
+  minDist: 5
   speed: 7
-  speedH: 4
-  speedV: 4
+  speedH: 0.2
+  speedV: 0.2
 --- !u!136 &136543594349714572
 CapsuleCollider:
   m_ObjectHideFlags: 1
