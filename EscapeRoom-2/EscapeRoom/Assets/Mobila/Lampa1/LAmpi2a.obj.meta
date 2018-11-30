@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f6c5dc4b39569b479ea8396159e079f
+guid: 85e9767a63d818c4f8d4a722d5a0b894
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,8 +7,8 @@ ModelImporter:
     100002: //RootNode
     400000: default
     400002: //RootNode
-    2100000: Material
-    2100002: Material_Wood-Texture-ID-7056.jpg
+    2100000: None
+    2100002: None_Wood-Texture-ID-7056.jpg
     2300000: default
     3300000: default
     4300000: default
