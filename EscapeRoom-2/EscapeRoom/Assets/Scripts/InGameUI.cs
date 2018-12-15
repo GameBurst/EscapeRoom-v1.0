@@ -132,6 +132,11 @@ public class InGameUI : MonoBehaviour {
         SceneManager.LoadScene(level);
     }
 
+    public void LoadNextScene()
+    {
+        loadingScreen.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
             //Functii pentru Audio:
             
