@@ -1047,7 +1047,7 @@ Prefab:
         type: 2}
       propertyPath: m_text
       value: 'Open the door by pressing the key slot in your inventory while pointing
-        on the door.
+        at the door.
 
         Good luck!'
       objectReference: {fileID: 0}
@@ -1095,7 +1095,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c1cf0c3d0606eb4c9ff1efa99b732f9, type: 2}
+      objectReference: {fileID: 2100000, guid: d3ecb800f81d199479c4fb2f720ca1ac, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8002403db83c2b14dac38853fdb26224, type: 2}
   m_IsPrefabAsset: 0
@@ -2033,28 +2033,29 @@ Prefab:
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_text
-      value: When you find the key, go to the door and open it to finish the level.
-        now pick up the key on the table by touching it.
+      value: You can pick up objects that you need by pointing at them, then touching
+        the object to store it in your inventory or to dispose it. Now pick up the
+        key from the table.
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 119
+      value: 167
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 26
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 27
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
@@ -2069,12 +2070,12 @@ Prefab:
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8002403db83c2b14dac38853fdb26224, type: 2}
@@ -2121,7 +2122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4549846317263202, guid: 965348d9731de504d8e355a6e3a013c7, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114851747631344840, guid: 965348d9731de504d8e355a6e3a013c7,
         type: 2}
@@ -2406,7 +2407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020197596136084, guid: c4915cc65ee1d874d93f6b9b67c0979f, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4915cc65ee1d874d93f6b9b67c0979f, type: 2}
@@ -2550,12 +2551,13 @@ Prefab:
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_text
-      value: Each level has a hidden key in the room, which you have to find.
+      value: Each level has a hidden key in the room, which you have to find in order
+        to open the exit door.
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 64
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
@@ -2565,17 +2567,17 @@ Prefab:
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 13
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 14
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114574959934645758, guid: 8002403db83c2b14dac38853fdb26224,
         type: 2}
