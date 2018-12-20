@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
             playerMove();
             cameraMove();
             checkForHit();
-            tempTake();
+            interactableTake();
         }
     }
 
@@ -191,6 +191,19 @@ public class PlayerController : MonoBehaviour {
                 if (hit.collider.tag == "Lockable")
                 {
                     interactableName.text = hit.collider.name + " (Locked)";
+                    if(hit.collider.name == "SeifCica")
+                    {
+                        if (Seif.notEnteringCode)
+                        {
+                            Seif.pointingAtThis = true;
+                           // print("ma uit la cufar");
+                        } 
+                    }
+                    else
+                    {
+                        Seif.pointingAtThis = false;
+                        //print("nu ma uit la cufar");
+                    }
                 }
                 else
                 {
@@ -210,10 +223,11 @@ public class PlayerController : MonoBehaviour {
             interactableName.text = " ";
             canPlace = false;
             spawnPosition = noPos;
+            Seif.pointingAtThis = false;
         }
     }
 
-    public void tempTake()
+    public void interactableTake()
     {
         if (interactable != null && (Input.GetKeyDown(KeyCode.E) || plsTake))
         {
@@ -234,6 +248,7 @@ public class PlayerController : MonoBehaviour {
 
     public void removeObject(int index)
     {
+        print(canPlace);
         if (intObjects[index] != null && canPlace)
         {
             if (intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName))

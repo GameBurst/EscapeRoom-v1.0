@@ -4,12 +4,11 @@ using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
-
     public Sprite icon;
 
     public GameObject obj;
 
-    public GameObject target;
+    public GameObject target, missingTargetPiece;
     public Animator targetAnimator;
 
     public Camera camera;
@@ -21,20 +20,21 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
+        missingTargetPiece.SetActive(false);
         targetAnimator.enabled = false;
         objName = null;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            targetAnimator.enabled = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    targetAnimator.enabled = true;
+        //}
 
         if (Input.GetMouseButtonDown(0) && objName == transform.name)
         {
-            print("Touching Slot");
+            print("Touching Object");
             checkIfTouched();
         }
     }
@@ -66,9 +66,12 @@ public class Interactable : MonoBehaviour
 
     public bool spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
     {
+        print(hitName);
+        print(target.name);
         if (hitName == target.name)
         {
             //Instantiate(obj);
+            missingTargetPiece.SetActive(true);
             targetAnimator.enabled = true;
             target.tag = "Untagged";
             //obj.transform.position = spawnCoords;

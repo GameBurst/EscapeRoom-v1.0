@@ -92,17 +92,17 @@ public class InGameUI : MonoBehaviour {
     void Resume ()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
         GameIsPaused = false;
         PlayerController.isPaused = false;
+        Time.timeScale = 1f;
     }
 
     void Pause ()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
         GameIsPaused = true;
         PlayerController.isPaused = true;
+        Time.timeScale = 0f;
     }
 
     public void SetQuality(int qualityIndex)
