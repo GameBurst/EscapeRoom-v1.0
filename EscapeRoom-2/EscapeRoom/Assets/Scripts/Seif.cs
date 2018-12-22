@@ -8,7 +8,8 @@ public class Seif : MonoBehaviour {
     public TMPro.TextMeshProUGUI code, debugText;
 
     public GameObject inputPanel;
-    public GameObject seif;
+    public GameObject usaSeif;
+    public Animator doorAnimator;
 
     public Camera camera;
 
@@ -28,6 +29,7 @@ public class Seif : MonoBehaviour {
         inputPanel.SetActive(false);
         pointingAtThis = false;
         notEnteringCode = true;
+        doorAnimator.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -41,7 +43,7 @@ public class Seif : MonoBehaviour {
     public void AddDigit(int val)
     {
         sound.Play();
-
+        print(text);
         if (text == "")
         {
             text = val.ToString();
@@ -60,39 +62,46 @@ public class Seif : MonoBehaviour {
 
     public void Cancel()
     {
+        sound.Play();
         inputPanel.SetActive(false);
         code.SetText("");
         PlayerController.isPaused = false;
         Time.timeScale = 1f;
         notEnteringCode = true;
         pointingAtThis = false;
-        sound.Play();
     }
 
     public void Ok()
     {
-        //inputPanel.SetActive(false);
-        if(text == rightCode)
+        sound.Play();
+        //
+        if (text == rightCode)
         {
             print("OK");
             debugText.SetText("OK");
+            inputPanel.SetActive(false);
+            doorAnimator.enabled = true;
+            usaSeif.tag = "Untagged";
+
+            PlayerController.isPaused = false;
+            Time.timeScale = 1f;
+            notEnteringCode = true;
+            pointingAtThis = false;
+
             //open the door, play sound etc.
-        } else {
+        }
+        else {
             print("Not ok");
             debugText.SetText("Not OK");
             //play error sound
         }
         code.SetText("");
         text = "";
-        //PlayerController.isPaused = false;
-        //Time.timeScale = 1f;
-        //notEnteringCode = true;
-        //pointingAtThis = false;
-        sound.Play();
     }
 
     public void Delete()
     {
+        sound.Play();
         if (text == "")
             return;
 
@@ -107,8 +116,6 @@ public class Seif : MonoBehaviour {
         {
             //play error sound
         }
-
-        sound.Play();
     }
 
     private void checkIfTouched()
@@ -119,8 +126,9 @@ public class Seif : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, minDist))
         {
             print(hit.collider.name);
-            print(Input.mousePosition);
-            if (hit.collider.name == seif.name)
+            print(usaSeif.name);
+            //print(Input.mousePosition);
+            if (hit.collider.name == usaSeif.name)
             {
                 inputPanel.SetActive(true);
                 PlayerController.isPaused = true;

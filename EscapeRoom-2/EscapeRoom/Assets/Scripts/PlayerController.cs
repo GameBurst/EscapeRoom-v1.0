@@ -178,6 +178,8 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, minDist))
         {
+            print(hit.collider.name);
+            print(hit.collider.tag);
             if (hit.collider.tag == "Interactable")
             {
                 //print("SUPER");
@@ -191,12 +193,12 @@ public class PlayerController : MonoBehaviour {
                 if (hit.collider.tag == "Lockable")
                 {
                     interactableName.text = hit.collider.name + " (Locked)";
-                    if(hit.collider.name == "SeifCica")
+                    if(hit.collider.name == "UsaSeif")
                     {
                         if (Seif.notEnteringCode)
                         {
                             Seif.pointingAtThis = true;
-                           // print("ma uit la cufar");
+                            //print("ma uit la cufar");
                         } 
                     }
                     else
