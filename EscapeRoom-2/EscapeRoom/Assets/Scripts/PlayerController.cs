@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
     public Interactable[] intObjects;
 
     Interactable interactable;
+    OpenByHand obh;
 
     public Vector3 spawnPosition;
     private Vector3 noPos;
@@ -178,8 +179,8 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, minDist))
         {
-            print(hit.collider.name);
-            print(hit.collider.tag);
+            //print(hit.collider.name);
+            //print(hit.collider.tag);
             if (hit.collider.tag == "Interactable")
             {
                 //print("SUPER");
@@ -206,6 +207,12 @@ public class PlayerController : MonoBehaviour {
                         Seif.pointingAtThis = false;
                         //print("nu ma uit la cufar");
                     }
+                }
+                else if(hit.collider.tag == "OpenByHand")
+                {
+                    obh = hit.collider.GetComponent<OpenByHand>();
+                    interactableName.text = obh.objName;
+                    obh.pointingAtThis = true;
                 }
                 else
                 {

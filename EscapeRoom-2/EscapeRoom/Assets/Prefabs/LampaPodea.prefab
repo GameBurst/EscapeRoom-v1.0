@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4606246174908148}
   - component: {fileID: 33952221547756316}
   - component: {fileID: 23966178850691742}
+  - component: {fileID: 64901118482633140}
   m_Layer: 0
   m_Name: LampaPodea
   m_TagString: Untagged
@@ -113,6 +114,20 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533323153037048}
+  m_Mesh: {fileID: 4300000, guid: c40012ee83f00f0428e058d62afa7cdb, type: 3}
+--- !u!64 &64901118482633140
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533323153037048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c40012ee83f00f0428e058d62afa7cdb, type: 3}
 --- !u!108 &108676050957797798
 Light:

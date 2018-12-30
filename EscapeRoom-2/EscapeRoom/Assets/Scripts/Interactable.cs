@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
     public Camera camera;
 
     public float radius = 3f;
-    public float minDist = 5f;
+    float minDist = 6f;
 
     public static string objName;
 

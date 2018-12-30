@@ -128,7 +128,6 @@ GameObject:
   - component: {fileID: 23732575887602758}
   - component: {fileID: 65648898268987518}
   - component: {fileID: 95311680928585470}
-  - component: {fileID: 114064218376320244}
   m_Layer: 0
   m_Name: Usa
   m_TagString: Untagged
@@ -809,19 +808,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114064218376320244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1840580049664790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024422453db0b1a429649bed58b3a919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HUD: {fileID: 0}
-  gameOver: {fileID: 0}
 --- !u!135 &135044217121898108
 SphereCollider:
   m_ObjectHideFlags: 1

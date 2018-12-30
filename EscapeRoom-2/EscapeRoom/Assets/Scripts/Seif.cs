@@ -18,7 +18,7 @@ public class Seif : MonoBehaviour {
     public string rightCode;
     private string text;
 
-    public float minDist = 5f;
+    float minDist = 6f;
 
     public static bool pointingAtThis, notEnteringCode;
 
