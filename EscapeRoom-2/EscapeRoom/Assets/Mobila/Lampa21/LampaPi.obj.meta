@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21bd10417b0c3104e8aaf9e63239ca74
+guid: cd330a026d477404695037cce0fa2add
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,7 +7,8 @@ ModelImporter:
     100002: //RootNode
     400000: default
     400002: //RootNode
-    2100000: defaultMat
+    2100000: None_Wood-Texture-ID-7056.jpg
+    2100002: None
     2300000: default
     3300000: default
     4300000: default
@@ -45,7 +46,6 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -70,9 +70,6 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

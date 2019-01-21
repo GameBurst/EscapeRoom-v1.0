@@ -2,11 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Interactable : MonoBehaviour
+public class Interactable : InterObjjj
 {
     public Sprite icon;
 
     public GameObject obj;
+    private Interactable inter;
 
     public GameObject target, missingTargetPiece;
     public Animator targetAnimator;
@@ -18,43 +19,19 @@ public class Interactable : MonoBehaviour
 
     public static string objName;
 
+
+    public Image[] inventorySlots;
+
     private void Start()
     {
-        missingTargetPiece.SetActive(false);
-        targetAnimator.enabled = false;
-        objName = null;
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    targetAnimator.enabled = true;
-        //}
-
-        if (Input.GetMouseButtonDown(0) && objName == transform.name)
+        inter = gameObject.GetComponent<Interactable>();
+        if(missingTargetPiece != null)
         {
-            print("Touching Object");
-            checkIfTouched();
+            missingTargetPiece.SetActive(false);
+            targetAnimator.enabled = false;
         }
-    }
-
-    private void checkIfTouched()
-    {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
-
-        if (Physics.Raycast(ray, out hit, minDist))
-        {
-            print(hit.collider.name);
-            print(obj.name);
-            if (hit.collider.name == obj.name)
-            {
-                print("o da");
-                PlayerController.plsTake = true;
-                return;
-            }
-        }
+        
+        //objName = null;
     }
 
     public void take(Image image)
@@ -64,19 +41,20 @@ public class Interactable : MonoBehaviour
         print("Am setat");
     }
 
-    public bool spawn(Image image, Vector3 spawnCoords, Quaternion rotation, string hitName)
+    public bool spawn(Image image, GameObject obj)
     {
-        print(hitName);
-        print(target.name);
-        if (hitName == target.name)
+        //print(hitName);
+        print("***" + target.name);
+        print("*****" + obj.name);
+        if (obj == target)
         {
-            //Instantiate(obj);
-            missingTargetPiece.SetActive(true);
-            targetAnimator.enabled = true;
+            if(missingTargetPiece != null)
+            {
+                missingTargetPiece.SetActive(true);
+                targetAnimator.enabled = true;
+            }
+            
             target.tag = "Untagged";
-            //obj.transform.position = spawnCoords;
-            //print(obj.transform.position);
-            //obj.SetActive(true);
             image.sprite = null;
 
             return true;
@@ -88,5 +66,31 @@ public class Interactable : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public override void Activate()
+    {
+        inventorySlots = new Image[7];
+        inventorySlots[0] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[1] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (1)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[2] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (2)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[3] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (3)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[4] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (4)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[5] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (5)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[6] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (6)/ItemButton/Icon").GetComponent<Image>();
+
+        for (int i = 0; i < PlayerController.intObjects.Length; ++i)
+        {
+            if (PlayerController.intObjects[i] == null)
+            {
+                PlayerController.intObjects[i] = inter;
+                print(PlayerController.intObjects[i]);
+                inventorySlots[i].sprite = icon;
+                obj.SetActive(false);
+                print("Am setat");
+
+                return;
+            }
+        }
     }
 }

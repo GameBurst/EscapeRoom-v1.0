@@ -16,8 +16,13 @@ public class InGameUI : MonoBehaviour {
     public Dropdown GraphicsDropdown;
     public Toggle MuteUnmuteToggle;
 
+    public GameObject globalLight;
+
     void Start()
     {
+        //Seteaza limita de fps uri la 60
+        Application.targetFrameRate = 60;
+
         //Verifica daca este o sensibilitate a camerei deja setata de jucator
         if (PlayerPrefs.HasKey("CameraSensibility"))
         {
@@ -43,6 +48,9 @@ public class InGameUI : MonoBehaviour {
             GraphicsDropdown.value = 2;
         }
 
+        if (GraphicsDropdown.value == 0)
+            globalLight.SetActive(true);
+        else globalLight.SetActive(false);
 
         //AudioSettings
         if (PlayerPrefs.GetInt("Muted") == 1)
@@ -94,7 +102,7 @@ public class InGameUI : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
         PlayerController.isPaused = false;
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 
     void Pause ()
@@ -102,13 +110,27 @@ public class InGameUI : MonoBehaviour {
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
         PlayerController.isPaused = true;
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void SetQuality(int qualityIndex)
     {
         PlayerPrefs.SetInt("QualityLevel", qualityIndex);
         QualitySettings.SetQualityLevel(qualityIndex);
+
+        if(qualityIndex == 0)
+        {
+            globalLight.SetActive(true);
+            LightSwitch.isQualityLow = true;
+            //LightSwitch.set = false;
+            print("LOWW");
+        } else
+        {
+            globalLight.SetActive(false);
+            LightSwitch.isQualityLow = false;
+            //LightSwitch.set = true;
+            print("NOTLOW");
+        }
     }
 
     public void SetSensibility(float sensibility)

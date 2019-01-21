@@ -2,50 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenByHand : MonoBehaviour {
-
+public class OpenByHand : InterObjjj
+{
     public GameObject obj;
     public Camera camera;
     public Animator animator;
+
+    public Vector3 force;
 
     public string objName;
     float minDist = 6f;
     public bool pointingAtThis;
 
     // Use this for initialization
-    void Start () {
-        animator.enabled = false;
+    void Start()
+    {
+        if (animator != null)
+            animator.enabled = false;
         pointingAtThis = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (pointingAtThis && Input.GetMouseButtonDown(0))
-        {
-            checkIfTouched();
-        }
     }
 
-    private void checkIfTouched()
+    public override void Activate()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
-
-        if (Physics.Raycast(ray, out hit, minDist))
-        {
-            //print(Input.mousePosition);
-            if (hit.collider.tag == "OpenByHand")
-            {
-                print("ok");
-                if(hit.collider.GetComponent<OpenByHand>().objName == objName)
-                {
-                    print("Super");
-                    obj.tag = "Untagged";
-                    animator.enabled = true;
-                    pointingAtThis = false;
-                    return;
-                }
-            }
-        }
+        obj.tag = "Untagged";
+        if (animator != null)
+            animator.enabled = true;
+        else obj.GetComponent<Rigidbody>().velocity = force;
     }
 }

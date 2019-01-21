@@ -8,20 +8,18 @@ public class PlayerController : MonoBehaviour {
     Rigidbody rb;
     public Camera camera;
 
-    protected Joystick joystick;
+    public Joystick moveJoystick;
+    public Joystick cameraJoystick;
     protected int IntialTouchesPosition;
 
     public Text interactableName;
 
     public Image[] inventorySlots;
 
-    public Interactable[] intObjects;
+    public static Interactable[] intObjects;
 
     Interactable interactable;
     OpenByHand obh;
-
-    public Vector3 spawnPosition;
-    private Vector3 noPos;
 
     private Touch iTouch;
 
@@ -40,17 +38,22 @@ public class PlayerController : MonoBehaviour {
     private bool canPlace, directionChosen;
     public static bool plsTake, isPaused;
 
+    private InterObjjj theObj;
+    private GameObject lockableObj;
+
+    public Button interactButton;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
-        joystick = FindObjectOfType <Joystick>();
+        //moveJoystick = FindObjectOfType <Joystick>();
 
         canPlace = false;
-        noPos = new Vector3(0f, 0f, 0f);
-        spawnPosition = noPos;
         intObjects = new Interactable[7];
         plsTake = false;
         isPaused = false;
+
+        interactButton.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -60,25 +63,38 @@ public class PlayerController : MonoBehaviour {
             playerMove();
             cameraMove();
             checkForHit();
-            interactableTake();
         }
     }
 
     void playerMove()
     {
         
-        rb.velocity = joystick.Vertical * speed * transform.forward + joystick.Horizontal * speed * transform.right;
+        rb.velocity = moveJoystick.Vertical * speed * transform.forward + moveJoystick.Horizontal * speed * transform.right;
 
-        if(rb.velocity.x == 0 && rb.velocity.y == 0) // acest if si functia subordonata lui sunt pc only(testing)
+        /*if(rb.velocity.x == 0 && rb.velocity.y == 0) // acest if si functia subordonata lui sunt pc only(testing)
         {
             rb.velocity = (transform.forward * speed * Input.GetAxis("Vertical")) + (transform.right * speed * Input.GetAxis("Horizontal"));
         }
-
+        */
     }
 
     void cameraMove()
     {
-        for(int i = 0; i < Input.touchCount; ++i)
+        ///////// miscare noua blanao
+
+        float xMoveDist = -speedH * cameraJoystick.Horizontal, yMoveDist = -speedV * cameraJoystick.Vertical;
+        yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
+
+        if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
+            pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
+
+        camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+
+        ///////
+        /*
+
+        for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began && 
                 Input.GetTouch(i).position.x < 300 && Input.GetTouch(i).position.y < 300)
@@ -156,7 +172,7 @@ public class PlayerController : MonoBehaviour {
 
         //Conditii pentru android - > camera sa se miste 
 
-        
+        */
         /*
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
@@ -181,8 +197,29 @@ public class PlayerController : MonoBehaviour {
         {
             //print(hit.collider.name);
             //print(hit.collider.tag);
+
+            if(hit.collider.tag != "Untagged" && hit.collider.tag != "Lockable")
+            {
+                theObj = hit.collider.GetComponent<InterObjjj>();
+                //print("OBIECTTTTTTTTTTT" + theObj);
+                //print(theObj);
+                interactButton.gameObject.SetActive(true);
+            } else
+            {
+                if (hit.collider.tag == "Lockable")
+                    lockableObj = hit.collider.gameObject;
+                else lockableObj = null;
+                theObj = null;
+                interactButton.gameObject.SetActive(false);
+            }
+
+            /*********
+
             if (hit.collider.tag == "Interactable")
             {
+                //zp = hit.collider.GetComponent<InteractionContainer>().Target;
+                //interactButton.gameObject.SetActive(true);
+
                 //print("SUPER");
                 interactable = hit.collider.GetComponent<Interactable>();
                 Interactable.objName = interactable.name;
@@ -190,11 +227,14 @@ public class PlayerController : MonoBehaviour {
             }
             else
             {
+                //zp = hit.collider.GetComponent<InteractionContainer>().Target;
+                //interactButton.gameObject.SetActive(true);
+
                 Interactable.objName = null;
                 if (hit.collider.tag == "Lockable")
                 {
                     interactableName.text = hit.collider.name + " (Locked)";
-                    if(hit.collider.name == "UsaSeif")
+                    if(hit.collider.name == "Safe-Deposit Box Door")
                     {
                         if (Seif.notEnteringCode)
                         {
@@ -221,51 +261,54 @@ public class PlayerController : MonoBehaviour {
             }
 
             //interactableName.text = hit.collider.name;
+
+            *************/
+
+            if(hit.collider.tag != "Untagged")
+            {
+                if(hit.collider.tag != "Lockable")
+                    interactableName.text = hit.collider.name;
+                else interactableName.text = hit.collider.name + " (Locked)";
+            } else
+            {
+                interactableName.text = "";
+            }
+
             canPlace = true;
-            hitName = hit.collider.name;
-            spawnPosition = hit.point;
+            if(hit.collider.tag == "Lockable")
+                hitName = hit.collider.name;
         }
         else
         {
-            hitName = null;
-            interactable = null;
-            interactableName.text = " ";
-            canPlace = false;
-            spawnPosition = noPos;
-            Seif.pointingAtThis = false;
-        }
-    }
+            interactButton.gameObject.SetActive(false);
 
-    public void interactableTake()
-    {
-        if (interactable != null && (Input.GetKeyDown(KeyCode.E) || plsTake))
-        {
-            for (int i = 0; i < intObjects.Length; ++i)
-            {
-                if (intObjects[i] == null)
-                {
-                    intObjects[i] = interactable;
-                    interactable.take(inventorySlots[i]);
-                    plsTake = false;
-                    return;
-                }
-            }
-            plsTake = false;
+            lockableObj = null;
+            //hitName = null;
+            //interactable = null;
+            interactableName.text = "";
+            canPlace = false;
+            //Seif.pointingAtThis = false;
         }
-        //plsTake = false;
     }
 
     public void removeObject(int index)
     {
         print(canPlace);
+        print(intObjects[index]);
         if (intObjects[index] != null && canPlace)
         {
-            if (intObjects[index].spawn(inventorySlots[index], spawnPosition, transform.rotation, hitName))
+            if (intObjects[index].spawn(inventorySlots[index], lockableObj))
             {
                 intObjects[index] = null;
             }
 
             return;
         }
+    }
+
+    public void startAction()
+    {
+        //zp.Interact();
+        theObj.Activate();
     }
 }

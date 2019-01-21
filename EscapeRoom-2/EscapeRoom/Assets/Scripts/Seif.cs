@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Seif : MonoBehaviour {
+public class Seif : InterObjjj {
 
     public TMPro.TextMeshProUGUI code, debugText;
 
@@ -24,8 +24,9 @@ public class Seif : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        code.SetText("");
+        code.SetText(" ");
         text = "";
+        debugText.SetText(" ");
         inputPanel.SetActive(false);
         pointingAtThis = false;
         notEnteringCode = true;
@@ -33,25 +34,23 @@ public class Seif : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
         if (Input.GetMouseButtonDown(0) && pointingAtThis && notEnteringCode)
         {
             checkIfTouched();
         }
-	}
+	}*/
 
     public void AddDigit(int val)
     {
         sound.Play();
         print(text);
-        if (text == "")
+        if (text == null)
         {
             text = val.ToString();
             code.SetText(text);
             return;
-        }
-
-        if (text.Length < 4)
+        } else if (text.Length < 4)
         {
             text += val.ToString();
             code.SetText(text);
@@ -64,6 +63,7 @@ public class Seif : MonoBehaviour {
     {
         sound.Play();
         inputPanel.SetActive(false);
+        debugText.SetText("");
         code.SetText("");
         PlayerController.isPaused = false;
         Time.timeScale = 1f;
@@ -92,7 +92,7 @@ public class Seif : MonoBehaviour {
         }
         else {
             print("Not ok");
-            debugText.SetText("Not OK");
+            debugText.SetText("WRONG");
             //play error sound
         }
         code.SetText("");
@@ -102,7 +102,7 @@ public class Seif : MonoBehaviour {
     public void Delete()
     {
         sound.Play();
-        if (text == "")
+        if (text == null)
             return;
 
         if (text.Length > 0)
@@ -118,7 +118,7 @@ public class Seif : MonoBehaviour {
         }
     }
 
-    private void checkIfTouched()
+   /* private void checkIfTouched()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
@@ -138,5 +138,15 @@ public class Seif : MonoBehaviour {
                 return;
             }
         }
+    }*/
+
+    public override void Activate()
+    {
+        print("havin fun");
+        text = "";
+        inputPanel.SetActive(true);
+        PlayerController.isPaused = true;
+        Time.timeScale = 0f;
+        notEnteringCode = false;
     }
 }
