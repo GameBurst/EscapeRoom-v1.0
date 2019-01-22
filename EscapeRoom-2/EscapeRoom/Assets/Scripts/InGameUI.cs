@@ -16,8 +16,6 @@ public class InGameUI : MonoBehaviour {
     public Dropdown GraphicsDropdown;
     public Toggle MuteUnmuteToggle;
 
-    public GameObject globalLight;
-
     void Start()
     {
         //Seteaza limita de fps uri la 60
@@ -47,10 +45,6 @@ public class InGameUI : MonoBehaviour {
             QualitySettings.SetQualityLevel(2);
             GraphicsDropdown.value = 2;
         }
-
-        if (GraphicsDropdown.value == 0)
-            globalLight.SetActive(true);
-        else globalLight.SetActive(false);
 
         //AudioSettings
         if (PlayerPrefs.GetInt("Muted") == 1)
@@ -120,15 +114,11 @@ public class InGameUI : MonoBehaviour {
 
         if(qualityIndex == 0)
         {
-            globalLight.SetActive(true);
-            LightSwitch.isQualityLow = true;
-            //LightSwitch.set = false;
+            LightSwitchHandler.isQualityLow = true;
             print("LOWW");
         } else
         {
-            globalLight.SetActive(false);
-            LightSwitch.isQualityLow = false;
-            //LightSwitch.set = true;
+            LightSwitchHandler.isQualityLow = false;
             print("NOTLOW");
         }
     }

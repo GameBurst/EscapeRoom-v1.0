@@ -8,7 +8,6 @@ public class LightSwitch : MonoBehaviour
     public GameObject[] lights;
 
     public static bool isQualityLow, set;
-    private bool lightsOn;
 
     private void Start()
     {
@@ -16,89 +15,42 @@ public class LightSwitch : MonoBehaviour
         {
             lights[i].transform.GetChild(0).gameObject.SetActive(false);
         }
-
-        if (PlayerPrefs.GetInt("QualityLevel") == 0)
-            isQualityLow = set = lightsOn = true;
-        else isQualityLow = set = lightsOn = false;
     }
 
     private void Update()
     {
         if (!switcher.GetComponent<BoxCollider>().enabled)
-            checkLights();
+            turnOffTheLights();
     }
 
-    private void checkLights()
+    private void turnOffTheLights()
     {
-        //print(isQualityLow + " " + set);
-        if (isQualityLow && !set)
+        for (int i = 0; i < lights.Length; ++i)
         {
-            print(switcher);
-            switcher.GetComponent<BoxCollider>().enabled = false;
-            for (int i = 0; i < lights.Length; ++i)
-            {
-                lights[i].transform.GetChild(0).gameObject.SetActive(false);
-            }
-            
-            set = true;
-        }
-        else if (!isQualityLow && set)
-        {
-            set = false;
-            switcher.GetComponent<BoxCollider>().enabled = true;
+            lights[i].transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (!isQualityLow)
+            for (int i = 0; i < lights.Length; ++i)
             {
-                print(switcher);
-                //print("MATAA");
-                for (int i = 0; i < lights.Length; ++i)
-                {
                     lights[i].transform.GetChild(0).gameObject.SetActive(true);
-                }
-
-                lightsOn = true;
             }
-            else { print("OK"); set = false; checkLights(); }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-
-            if (!isQualityLow)
-            {
-                print(switcher);
-                //print("MA TA WA");
-                //print("MA TA WA");
-                for (int i = 0; i < lights.Length; ++i)
-                {
-                    lights[i].transform.GetChild(0).gameObject.SetActive(true);
-                }
-
-                lightsOn = true;
-            }
-            else { print("OK"); set = false; checkLights(); }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (isQualityLow || other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             for (int i = 0; i < lights.Length; ++i)
             {
                 lights[i].transform.GetChild(0).gameObject.SetActive(false);
             }
-
-            lightsOn = false;
         }
     }
 }
