@@ -924,7 +924,7 @@ MonoBehaviour:
   obj: {fileID: 101580561}
   camera: {fileID: 672100085}
   animator: {fileID: 0}
-  force: {x: -6, y: 0, z: 0}
+  force: {x: -7, y: 0, z: 0}
   objName: Space Book
   pointingAtThis: 0
 --- !u!54 &101580563
@@ -3442,7 +3442,7 @@ PrefabInstance:
     - target: {fileID: 114506267854227650, guid: bd38c416086c4fa4da0f9d511e64284c,
         type: 3}
       propertyPath: minDist
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114506267854227650, guid: bd38c416086c4fa4da0f9d511e64284c,
         type: 3}
@@ -6722,7 +6722,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1191013887190712, guid: 30210a89226969f47b2db6e52b0fbc30, type: 3}
       propertyPath: m_Name
-      value: Book6
+      value: Space Book
       objectReference: {fileID: 0}
     - target: {fileID: 1191013887190712, guid: 30210a89226969f47b2db6e52b0fbc30, type: 3}
       propertyPath: m_TagString
@@ -7706,7 +7706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39bcb2bc55ab6c14a8d3f24fc5e07575, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.15
+      value: -16.269
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39bcb2bc55ab6c14a8d3f24fc5e07575, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9250,7 +9250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.687
+      value: 28.503
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9258,7 +9258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.157
+      value: 28.086
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10655,7 +10655,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1349339299352870, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
       propertyPath: m_Name
-      value: Book7
+      value: Coding Book
       objectReference: {fileID: 0}
     - target: {fileID: 1349339299352870, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
       propertyPath: m_TagString
@@ -10740,7 +10740,7 @@ MonoBehaviour:
   obj: {fileID: 1326145766}
   camera: {fileID: 672100085}
   animator: {fileID: 0}
-  force: {x: -6, y: 0, z: 0}
+  force: {x: -8, y: 0, z: 0}
   objName: Coding Book
   pointingAtThis: 0
 --- !u!54 &1326145768
@@ -10791,7 +10791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.5
+      value: -11.723
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10799,7 +10799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.5
+      value: -26.687
       objectReference: {fileID: 0}
     - target: {fileID: 4756343325480360, guid: 48f03066c3f24ec4f9d5da2872142990, type: 3}
       propertyPath: m_LocalRotation.x
@@ -14279,7 +14279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1378627422154138, guid: 97c77a45786cb4c4ca727df16b4fcf7a, type: 3}
       propertyPath: m_Name
-      value: Book1 (1)
+      value: Butterfly Book
       objectReference: {fileID: 0}
     - target: {fileID: 1378627422154138, guid: 97c77a45786cb4c4ca727df16b4fcf7a, type: 3}
       propertyPath: m_TagString
@@ -14370,7 +14370,7 @@ MonoBehaviour:
   obj: {fileID: 1748245487}
   camera: {fileID: 672100085}
   animator: {fileID: 0}
-  force: {x: -6, y: 0, z: 0}
+  force: {x: -6.5, y: 0, z: 0}
   objName: Butterfly Book
   pointingAtThis: 0
 --- !u!65 &1748245489
@@ -16643,7 +16643,7 @@ MonoBehaviour:
   obj: {fileID: 1933654902}
   camera: {fileID: 672100085}
   animator: {fileID: 0}
-  force: {x: 0, y: 0, z: 0}
+  force: {x: -6, y: 0, z: 0}
   objName: Programming Book
   pointingAtThis: 0
 --- !u!65 &1933654905
