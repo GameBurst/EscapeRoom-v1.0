@@ -26,7 +26,10 @@ public class OpenByHand : InterObjjj
     {
         obj.tag = "Untagged";
         if (animator != null)
+        {
+            print("Enabling");
             animator.enabled = true;
+        }
         else obj.GetComponent<Rigidbody>().velocity = force;
     }
 }

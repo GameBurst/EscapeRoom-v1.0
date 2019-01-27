@@ -68,8 +68,9 @@ public class PlayerController : MonoBehaviour {
 
     void playerMove()
     {
-        
-        rb.velocity = moveJoystick.Vertical * speed * transform.forward + moveJoystick.Horizontal * speed * transform.right;
+        Vector3 moveDirection = moveJoystick.Vertical * speed * transform.forward + moveJoystick.Horizontal * speed * transform.right;
+        moveDirection.y = rb.velocity.y;
+        rb.velocity = moveDirection;
 
         /*if(rb.velocity.x == 0 && rb.velocity.y == 0) // acest if si functia subordonata lui sunt pc only(testing)
         {
@@ -309,6 +310,7 @@ public class PlayerController : MonoBehaviour {
     public void startAction()
     {
         //zp.Interact();
+        print(theObj);
         theObj.Activate();
     }
 }
