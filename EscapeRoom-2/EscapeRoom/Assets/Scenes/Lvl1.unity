@@ -19092,6 +19092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 7697519141110339193, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1824088682}
     - target: {fileID: 7697519141955164572, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -19111,6 +19116,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114122688727109286, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
+        type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 215272388}
+    - target: {fileID: 223870275834630448, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4182963680274680, guid: 7a74ce5f6b48466429cca9d4c9a8e085, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19516,11 +19531,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7697519141110339193, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1824088682}
     - target: {fileID: 7624443141101091087, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -19536,16 +19546,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 250
       objectReference: {fileID: 0}
-    - target: {fileID: 223870275834630448, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114122688727109286, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
-        type: 3}
-      propertyPath: globalLight
-      value: 
-      objectReference: {fileID: 215272388}
     - target: {fileID: 7697519140832520011, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
