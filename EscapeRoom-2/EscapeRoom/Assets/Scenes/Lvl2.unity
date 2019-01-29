@@ -1339,8 +1339,24 @@ PrefabInstance:
       propertyPath: interactButton
       value: 
       objectReference: {fileID: 1949387809}
+    - target: {fileID: 114506267854227650, guid: bd38c416086c4fa4da0f9d511e64284c,
+        type: 3}
+      propertyPath: ghMToggle
+      value: 
+      objectReference: {fileID: 1949387813}
+    - target: {fileID: 114506267854227650, guid: bd38c416086c4fa4da0f9d511e64284c,
+        type: 3}
+      propertyPath: capsule
+      value: 
+      objectReference: {fileID: 257384452}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd38c416086c4fa4da0f9d511e64284c, type: 3}
+--- !u!1 &257384452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1241371517445816, guid: bd38c416086c4fa4da0f9d511e64284c,
+    type: 3}
+  m_PrefabInstance: {fileID: 257384451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &264094511
 GameObject:
   m_ObjectHideFlags: 0
@@ -16037,6 +16053,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6669b2160065e50478339b2530a7a11a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949387813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 536855203, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
+    type: 3}
+  m_PrefabInstance: {fileID: 1949387808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1952830800

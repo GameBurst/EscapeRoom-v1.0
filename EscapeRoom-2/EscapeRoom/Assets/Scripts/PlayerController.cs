@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour {
 
     public Button interactButton;
 
+    //debugging
+    public static bool ghostMode;
+    public GameObject capsule;
+    public Toggle ghMToggle;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
@@ -54,7 +59,24 @@ public class PlayerController : MonoBehaviour {
         isPaused = false;
 
         interactButton.gameObject.SetActive(false);
-	}
+
+        ///debug
+        /*ghostMode = ghMToggle.isOn;
+
+        if (ghostMode == true)
+        {
+            capsule.GetComponent<Collider>().enabled = false;
+            rb.useGravity = false;
+        }
+        else
+        {
+            capsule.GetComponent<Collider>().enabled = true;
+            rb.useGravity = true;
+            rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
+        }*/
+        ghostMode = false;
+        ghMToggle.isOn = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -68,9 +90,17 @@ public class PlayerController : MonoBehaviour {
 
     void playerMove()
     {
-        Vector3 moveDirection = moveJoystick.Vertical * speed * transform.forward + moveJoystick.Horizontal * speed * transform.right;
-        moveDirection.y = rb.velocity.y;
-        rb.velocity = moveDirection;
+        if (!ghostMode)
+        {
+            Vector3 moveDirection = moveJoystick.Vertical * speed * transform.forward + moveJoystick.Horizontal * speed * transform.right;
+            moveDirection.y = rb.velocity.y;
+            rb.velocity = moveDirection;
+        }
+        else
+        {
+            Vector3 moveDirection = moveJoystick.Vertical * speed * 3 * transform.forward + moveJoystick.Horizontal * speed * 3 * transform.right;
+            rb.velocity = moveDirection;
+        }
 
         /*if(rb.velocity.x == 0 && rb.velocity.y == 0) // acest if si functia subordonata lui sunt pc only(testing)
         {
@@ -90,90 +120,11 @@ public class PlayerController : MonoBehaviour {
             pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
 
         camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-        rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
 
-        ///////
-        /*
+        if(!ghostMode)
+            rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
+        else rb.transform.eulerAngles = new Vector3(pitch, yaw, rb.transform.rotation.eulerAngles.z);
 
-        for (int i = 0; i < Input.touchCount; ++i)
-        {
-            if (Input.GetTouch(i).phase == TouchPhase.Began && 
-                Input.GetTouch(i).position.x < 300 && Input.GetTouch(i).position.y < 300)
-            {
-                IntialTouchesPosition = i;
-            }
-        }
-
-        if (((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f)) && Input.touchCount == 1)
-        {
-            foreach (Touch touch in Input.touches)
-            {
-                switch (touch.phase)
-                {
-                    // Record initial touch position.
-                    case TouchPhase.Began:
-                        iTouch = touch;
-                        break;
-
-                    // Determine direction by comparing the current touch position with the initial one.
-                    case TouchPhase.Moved:
-                        float xMoveDist = speedH * (iTouch.position.x - touch.position.x), yMoveDist = speedV * (iTouch.position.y - touch.position.y);
-                        yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
-
-                        if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                            pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
-
-                        camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-                        rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-                        iTouch = touch;
-                        break;
-
-                    // Report that a direction has been chosen when the finger is lifted.
-                    case TouchPhase.Ended:
-                        iTouch = new Touch();
-                        break;
-                }
-            }
-        }
-        else if (((joystick.Horizontal != 0.0f) || (joystick.Vertical != 0.0f)) && Input.touchCount > 1)
-        {
-            for (int i = 0; i < Input.touchCount; ++i)
-            {
-                Touch touch = Input.GetTouch(i);
-                if (IntialTouchesPosition != i)
-                {
-                    switch (touch.phase)
-                    {
-                        // Record initial touch position.
-                        case TouchPhase.Began:
-                            iTouch = touch;
-                            break;
-
-                        // Determine direction by comparing the current touch position with the initial one.
-                        case TouchPhase.Moved:
-                            float xMoveDist = speedH * (iTouch.position.x - touch.position.x), yMoveDist = speedV * (iTouch.position.y - touch.position.y);
-                            yaw -= xMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
-
-                            if (-90 <= pitch + yMoveDist && pitch + yMoveDist <= 90)
-                                pitch += yMoveDist * PlayerPrefs.GetFloat("CameraSensibility");
-
-                            camera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-                            rb.transform.eulerAngles = new Vector3(0f, yaw, 0f);
-                            iTouch = touch;
-                            break;
-
-                        // Report that a direction has been chosen when the finger is lifted.
-                        case TouchPhase.Ended:
-                            iTouch = new Touch();
-                            break;
-                    }
-                }
-            }
-        }
-
-        //Conditii pentru android - > camera sa se miste 
-
-        */
         /*
         if (Input.GetButton("Fire1") && ((joystick.Horizontal == 0.0f) || (joystick.Vertical == 0.0f))) //Pentru Pc(debugging)        
         {
@@ -196,14 +147,9 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, minDist))
         {
-            //print(hit.collider.name);
-            //print(hit.collider.tag);
-
             if(hit.collider.tag != "Untagged" && hit.collider.tag != "Lockable")
             {
                 theObj = hit.collider.GetComponent<InterObjjj>();
-                //print("OBIECTTTTTTTTTTT" + theObj);
-                //print(theObj);
                 interactButton.gameObject.SetActive(true);
             } else
             {
@@ -213,57 +159,6 @@ public class PlayerController : MonoBehaviour {
                 theObj = null;
                 interactButton.gameObject.SetActive(false);
             }
-
-            /*********
-
-            if (hit.collider.tag == "Interactable")
-            {
-                //zp = hit.collider.GetComponent<InteractionContainer>().Target;
-                //interactButton.gameObject.SetActive(true);
-
-                //print("SUPER");
-                interactable = hit.collider.GetComponent<Interactable>();
-                Interactable.objName = interactable.name;
-                interactableName.text = hit.collider.name;
-            }
-            else
-            {
-                //zp = hit.collider.GetComponent<InteractionContainer>().Target;
-                //interactButton.gameObject.SetActive(true);
-
-                Interactable.objName = null;
-                if (hit.collider.tag == "Lockable")
-                {
-                    interactableName.text = hit.collider.name + " (Locked)";
-                    if(hit.collider.name == "Safe-Deposit Box Door")
-                    {
-                        if (Seif.notEnteringCode)
-                        {
-                            Seif.pointingAtThis = true;
-                            //print("ma uit la cufar");
-                        } 
-                    }
-                    else
-                    {
-                        Seif.pointingAtThis = false;
-                        //print("nu ma uit la cufar");
-                    }
-                }
-                else if(hit.collider.tag == "OpenByHand")
-                {
-                    obh = hit.collider.GetComponent<OpenByHand>();
-                    interactableName.text = obh.objName;
-                    obh.pointingAtThis = true;
-                }
-                else
-                {
-                    interactableName.text = null;
-                }
-            }
-
-            //interactableName.text = hit.collider.name;
-
-            *************/
 
             if(hit.collider.tag != "Untagged")
             {
@@ -284,11 +179,8 @@ public class PlayerController : MonoBehaviour {
             interactButton.gameObject.SetActive(false);
 
             lockableObj = null;
-            //hitName = null;
-            //interactable = null;
             interactableName.text = "";
             canPlace = false;
-            //Seif.pointingAtThis = false;
         }
     }
 
@@ -312,5 +204,26 @@ public class PlayerController : MonoBehaviour {
         //zp.Interact();
         print(theObj);
         theObj.Activate();
+    }
+
+    ///debugging
+    public void enableGhostMode(bool isActive)
+    {
+        //if(isActive == false)
+        ghostMode = isActive;
+        print(ghostMode);
+
+        if (ghostMode == true)
+        {
+            capsule.GetComponent<Collider>().enabled = false;
+            rb.useGravity = false;
+        }
+        else
+        {
+            capsule.GetComponent<Collider>().enabled = true;
+            rb.useGravity = true;
+            rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
+        }
+
     }
 }
