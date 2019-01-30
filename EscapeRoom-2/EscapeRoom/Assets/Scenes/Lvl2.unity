@@ -15581,6 +15581,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 536855203, guid: 7a74ce5f6b48466429cca9d4c9a8e085, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1725288979}
+    - target: {fileID: 536855203, guid: 7a74ce5f6b48466429cca9d4c9a8e085, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: enableGhostMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 536855203, guid: 7a74ce5f6b48466429cca9d4c9a8e085, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7697519141955164572, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -17171,7 +17183,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: d6619a40e277578419b4a4b721f8e47a, type: 3}
 --- !u!54 &2121672725

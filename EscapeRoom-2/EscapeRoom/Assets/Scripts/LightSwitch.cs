@@ -7,50 +7,62 @@ public class LightSwitch : MonoBehaviour
     public GameObject switcher;
     public GameObject[] lights;
 
-    public static bool isQualityLow, set;
+    public static bool isQualityLow;
+    public bool entered = false;
 
     private void Start()
     {
-        for (int i = 0; i < lights.Length; ++i)
-        {
-            lights[i].transform.GetChild(0).gameObject.SetActive(false);
-        }
+        if (PlayerPrefs.GetInt("QualityLevel") == 0)
+            isQualityLow = true;
+        else isQualityLow = false;
+
+        if (isQualityLow || !entered)
+            turnOnAndOffTheLights(false);
+        else turnOnAndOffTheLights(true);
     }
 
     private void Update()
     {
-        if (!switcher.GetComponent<BoxCollider>().enabled)
-            turnOffTheLights();
-    }
-
-    private void turnOffTheLights()
-    {
-        for (int i = 0; i < lights.Length; ++i)
+        if (isQualityLow)
         {
-            lights[i].transform.GetChild(0).gameObject.SetActive(false);
+            print("Le sting");
+            turnOnAndOffTheLights(false);
+        } else if(!isQualityLow)
+        {
+            print("Le aprind");
+            if(entered)
+                turnOnAndOffTheLights(true);
         }
     }
 
-    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
-            for (int i = 0; i < lights.Length; ++i)
+            print("A intrat/iesit playerul " + entered);
+            entered = lights[0].transform.GetChild(0).gameObject.active;
+            if (!entered)
             {
-                    lights[i].transform.GetChild(0).gameObject.SetActive(true);
+                if (!isQualityLow)
+                    turnOnAndOffTheLights(true);
+                entered = true;
+            }
+            else
+            {
+                if (!isQualityLow)
+                    turnOnAndOffTheLights(false);
+                entered = false;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void turnOnAndOffTheLights(bool state)
     {
-        if (other.gameObject.tag == "Player")
+        if (lights[0].transform.GetChild(0).gameObject.active == state)
+            return;
+        for (int i = 0; i < lights.Length; ++i)
         {
-            for (int i = 0; i < lights.Length; ++i)
-            {
-                lights[i].transform.GetChild(0).gameObject.SetActive(false);
-            }
+            lights[i].transform.GetChild(0).gameObject.SetActive(state);
         }
     }
 }

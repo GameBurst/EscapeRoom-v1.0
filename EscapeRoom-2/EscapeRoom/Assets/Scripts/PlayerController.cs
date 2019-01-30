@@ -61,19 +61,6 @@ public class PlayerController : MonoBehaviour {
         interactButton.gameObject.SetActive(false);
 
         ///debug
-        /*ghostMode = ghMToggle.isOn;
-
-        if (ghostMode == true)
-        {
-            capsule.GetComponent<Collider>().enabled = false;
-            rb.useGravity = false;
-        }
-        else
-        {
-            capsule.GetComponent<Collider>().enabled = true;
-            rb.useGravity = true;
-            rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
-        }*/
         ghostMode = false;
         ghMToggle.isOn = false;
     }
@@ -207,10 +194,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     ///debugging
-    public void enableGhostMode(bool isActive)
+    public void enableGhostMode(bool ioi)
     {
-        //if(isActive == false)
-        ghostMode = isActive;
+        ghostMode = ghMToggle.isOn;
         print(ghostMode);
 
         if (ghostMode == true)
@@ -222,7 +208,8 @@ public class PlayerController : MonoBehaviour {
         {
             capsule.GetComponent<Collider>().enabled = true;
             rb.useGravity = true;
-            rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            //rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            rb.rotation = Quaternion.identity;
         }
 
     }

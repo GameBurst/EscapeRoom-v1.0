@@ -27,22 +27,12 @@ public class LightSwitchHandler : MonoBehaviour
         {
             set = true;
             mainLight.SetActive(true);
-
-            for(int i = 0; i < lightSwitchers.Length; ++i)
-            {
-                print("Sting " + lightSwitchers[i]);
-                lightSwitchers[i].gameObject.GetComponent<Collider>().enabled = false;
-            }
+            LightSwitch.isQualityLow = true;
         } else if(!isQualityLow && set)
         {
             set = false;
             mainLight.SetActive(false);
-
-            for (int i = 0; i < lightSwitchers.Length; ++i)
-            {
-                print("Aprind " + lightSwitchers[i]);
-                lightSwitchers[i].gameObject.GetComponent<Collider>().enabled = true;
-            }
+            LightSwitch.isQualityLow = false;
         }
     }
 }
