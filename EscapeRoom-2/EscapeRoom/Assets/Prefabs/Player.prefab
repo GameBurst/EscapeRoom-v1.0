@@ -166,11 +166,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  minDist: 8.5
+  minDist: 8
   speed: 8
   speedH: 2
   speedV: 2
   interactButton: {fileID: 0}
+  capsule: {fileID: 0}
+  ghMToggle: {fileID: 0}
 --- !u!1 &1690828247593744
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +241,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1

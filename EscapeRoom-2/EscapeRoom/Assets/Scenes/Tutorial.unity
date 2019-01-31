@@ -1508,7 +1508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4404518975700986, guid: f7a8d61dfd6e9e543a2d3a7e6e61006a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 23816511960753744, guid: f7a8d61dfd6e9e543a2d3a7e6e61006a,
         type: 3}
@@ -1712,6 +1712,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a74ce5f6b48466429cca9d4c9a8e085, type: 3}
+--- !u!223 &1093836146 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223870275834630448, guid: 7a74ce5f6b48466429cca9d4c9a8e085,
+    type: 3}
+  m_PrefabInstance: {fileID: 1093836145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1147891205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2147,7 +2153,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HUD
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1093836146}
     - target: {fileID: 114851747631344840, guid: 965348d9731de504d8e355a6e3a013c7,
         type: 3}
       propertyPath: gameOver
