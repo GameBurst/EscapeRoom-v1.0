@@ -44,8 +44,8 @@ public class Interactable : InterObjjj
     public bool spawn(Image image, GameObject obj)
     {
         //print(hitName);
-        print("***" + target.name);
-        print("*****" + obj.name);
+        //print("***" + target.name);
+        //print("*****" + obj.name);
         if (obj == target)
         {
             if(missingTargetPiece != null)

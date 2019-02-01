@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour {
 
@@ -12,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     public Joystick cameraJoystick;
     protected int IntialTouchesPosition;
 
-    public Text interactableName;
+    public Text interactableName, inSlotObjName;
 
     public Image[] inventorySlots;
 
@@ -59,6 +61,8 @@ public class PlayerController : MonoBehaviour {
         isPaused = false;
 
         interactButton.gameObject.SetActive(false);
+
+        inSlotObjName.text = "";
 
         ///debug
         ghostMode = false;
@@ -173,8 +177,8 @@ public class PlayerController : MonoBehaviour {
 
     public void removeObject(int index)
     {
-        print(canPlace);
-        print(intObjects[index]);
+        //print(canPlace);
+        //print(intObjects[index]);
         if (intObjects[index] != null && canPlace)
         {
             if (intObjects[index].spawn(inventorySlots[index], lockableObj))
@@ -188,9 +192,24 @@ public class PlayerController : MonoBehaviour {
 
     public void startAction()
     {
-        //zp.Interact();
         print(theObj);
         theObj.Activate();
+    }
+
+    public void onButtonPress(int i)
+    {
+        if (intObjects[i] == null || interactableName.text != "")
+            return;
+
+        inSlotObjName.text = intObjects[i].name;
+    }
+
+    public void onButtonRelease(int i)
+    {
+        if (intObjects[i] == null)
+            return;
+
+        inSlotObjName.text = "";
     }
 
     ///debugging
@@ -208,7 +227,6 @@ public class PlayerController : MonoBehaviour {
         {
             capsule.GetComponent<Collider>().enabled = true;
             rb.useGravity = true;
-            //rb.rotation = new Quaternion(0f, 0f, 0f, 0f);
             rb.rotation = Quaternion.identity;
         }
 
