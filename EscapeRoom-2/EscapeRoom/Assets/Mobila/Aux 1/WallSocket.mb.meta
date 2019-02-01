@@ -1,28 +1,8 @@
 fileFormatVersion: 2
-guid: 292faacfc1baa374ab1364fb911ad813
+guid: 2c9c2e623dc4d854b92196cd3a30d263
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: outlet_default
-    100004: screw1_default
-    100006: screw2_default
-    400000: //RootNode
-    400002: outlet_default
-    400004: screw1_default
-    400006: screw2_default
-    2100000: outlet_defaultMat
-    2100002: screw1_defaultMat
-    2100004: screw2_defaultMat
-    2300000: outlet_default
-    2300002: screw1_default
-    2300004: screw2_default
-    3300000: outlet_default
-    3300002: screw1_default
-    3300004: screw2_default
-    4300000: outlet_default
-    4300002: screw1_default
-    4300004: screw2_default
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -104,7 +84,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
