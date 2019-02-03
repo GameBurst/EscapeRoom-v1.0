@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Seif : InterObjjj {
+public class Seif : InterObjjj
+{
 
     public TMPro.TextMeshProUGUI code, debugText;
 
     public GameObject inputPanel;
     public GameObject usaSeif;
+    public GameObject UICanvas;
     public Animator doorAnimator;
 
     public Camera camera;
@@ -23,7 +25,8 @@ public class Seif : InterObjjj {
     public static bool pointingAtThis, notEnteringCode;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         code.SetText(" ");
         text = "";
         debugText.SetText(" ");
@@ -32,9 +35,9 @@ public class Seif : InterObjjj {
         notEnteringCode = true;
         doorAnimator.enabled = false;
     }
-	
-	// Update is called once per frame
-	/*void Update () {
+
+    // Update is called once per frame
+    /*void Update () {
         if (Input.GetMouseButtonDown(0) && pointingAtThis && notEnteringCode)
         {
             checkIfTouched();
@@ -50,11 +53,14 @@ public class Seif : InterObjjj {
             text = val.ToString();
             code.SetText(text);
             return;
-        } else if (text.Length < 4)
+        }
+        else if (text.Length < 4)
         {
             text += val.ToString();
             code.SetText(text);
-        } else {
+        }
+        else
+        {
             //play error sound
         }
     }
@@ -63,6 +69,7 @@ public class Seif : InterObjjj {
     {
         sound.Play();
         inputPanel.SetActive(false);
+        UICanvas.SetActive(true);
         debugText.SetText("");
         code.SetText("");
         PlayerController.isPaused = false;
@@ -81,6 +88,7 @@ public class Seif : InterObjjj {
             debugText.SetText("OK");
             inputPanel.SetActive(false);
             doorAnimator.enabled = true;
+            UICanvas.SetActive(true);
             usaSeif.tag = "Untagged";
 
             PlayerController.isPaused = false;
@@ -90,7 +98,8 @@ public class Seif : InterObjjj {
 
             //open the door, play sound etc.
         }
-        else {
+        else
+        {
             print("Not ok");
             debugText.SetText("WRONG");
             //play error sound
@@ -118,33 +127,34 @@ public class Seif : InterObjjj {
         }
     }
 
-   /* private void checkIfTouched()
-    {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
+    /* private void checkIfTouched()
+     {
+         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+         RaycastHit hit = new RaycastHit();
 
-        if (Physics.Raycast(ray, out hit, minDist))
-        {
-            print(hit.collider.name);
-            print(usaSeif.name);
-            //print(Input.mousePosition);
-            if (hit.collider.name == usaSeif.name)
-            {
-                inputPanel.SetActive(true);
-                PlayerController.isPaused = true;
-                Time.timeScale = 0f;
-                notEnteringCode = false;
-                text = "";
-                return;
-            }
-        }
-    }*/
+         if (Physics.Raycast(ray, out hit, minDist))
+         {
+             print(hit.collider.name);
+             print(usaSeif.name);
+             //print(Input.mousePosition);
+             if (hit.collider.name == usaSeif.name)
+             {
+                 inputPanel.SetActive(true);
+                 PlayerController.isPaused = true;
+                 Time.timeScale = 0f;
+                 notEnteringCode = false;
+                 text = "";
+                 return;
+             }
+         }
+     }*/
 
     public override void Activate()
     {
         print("havin fun");
         text = "";
         inputPanel.SetActive(true);
+        UICanvas.SetActive(false);
         PlayerController.isPaused = true;
         Time.timeScale = 0f;
         notEnteringCode = false;
