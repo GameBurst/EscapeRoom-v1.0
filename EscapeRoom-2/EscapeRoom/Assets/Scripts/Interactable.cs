@@ -71,13 +71,13 @@ public class Interactable : InterObjjj
     public override void Activate()
     {
         inventorySlots = new Image[7];
-        inventorySlots[0] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[1] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (1)/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[2] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (2)/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[3] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (3)/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[4] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (4)/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[5] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (5)/ItemButton/Icon").GetComponent<Image>();
-        inventorySlots[6] = GameObject.Find("/HUD/Canvas/Inventory/InventorySlot (6)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[0] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[1] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (1)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[2] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (2)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[3] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (3)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[4] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (4)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[5] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (5)/ItemButton/Icon").GetComponent<Image>();
+        inventorySlots[6] = GameObject.Find("/HUD/UICanvas/Inventory/InventorySlot (6)/ItemButton/Icon").GetComponent<Image>();
 
         for (int i = 0; i < PlayerController.intObjects.Length; ++i)
         {

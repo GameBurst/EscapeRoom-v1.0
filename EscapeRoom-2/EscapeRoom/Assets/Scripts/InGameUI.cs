@@ -8,6 +8,7 @@ public class InGameUI : MonoBehaviour {
 
     public GameObject loadingScreen;
     public GameObject pauseMenuUI;
+    public GameObject UICanvas;
 
     public static bool GameIsPaused = false;
     bool PauseOrResumeIsPressed = false;
@@ -93,6 +94,7 @@ public class InGameUI : MonoBehaviour {
 
     void Resume ()
     {
+        UICanvas.SetActive(true);
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
         PlayerController.isPaused = false;
@@ -101,6 +103,7 @@ public class InGameUI : MonoBehaviour {
 
     void Pause ()
     {
+        UICanvas.SetActive(false);
         pauseMenuUI.SetActive(true);
         GameIsPaused = true;
         PlayerController.isPaused = true;
