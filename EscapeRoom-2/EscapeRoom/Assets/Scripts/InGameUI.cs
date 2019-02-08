@@ -45,6 +45,7 @@ public class InGameUI : MonoBehaviour {
         {
             QualitySettings.SetQualityLevel(2);
             GraphicsDropdown.value = 2;
+            LightSwitchHandler.isQualityLow = false;
         }
 
         //AudioSettings
