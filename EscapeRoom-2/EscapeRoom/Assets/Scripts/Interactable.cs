@@ -12,9 +12,9 @@ public class Interactable : InterObjjj
     public GameObject target, missingTargetPiece;
     public Animator targetAnimator;
 
-    public Camera camera;
+    //public Camera camera;
 
-    public float radius = 3f;
+    public float radius = 1f;
     float minDist = 6f;
 
     public static string objName;
@@ -55,6 +55,7 @@ public class Interactable : InterObjjj
             }
             
             target.tag = "Untagged";
+            print("Imagine din spawn: " + image);
             image.sprite = null;
 
             return true;
@@ -87,7 +88,7 @@ public class Interactable : InterObjjj
                 print(PlayerController.intObjects[i]);
                 inventorySlots[i].sprite = icon;
                 obj.SetActive(false);
-                print("Am setat");
+                print("Am setat la indexul " + i + " sprite-ul " + inventorySlots[i].sprite);
 
                 return;
             }

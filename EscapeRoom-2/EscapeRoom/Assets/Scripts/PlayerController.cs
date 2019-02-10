@@ -181,6 +181,9 @@ public class PlayerController : MonoBehaviour {
         //print(intObjects[index]);
         if (intObjects[index] != null && canPlace)
         {
+            print("Index: " + index);
+            print("Sprite: " + inventorySlots[index]);
+            print("Lockable obj: " + lockableObj);
             if (intObjects[index].spawn(inventorySlots[index], lockableObj))
             {
                 intObjects[index] = null;
