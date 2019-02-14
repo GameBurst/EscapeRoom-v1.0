@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour {
     public static bool plsTake, isPaused;
 
     private InterObjjj theObj;
+    private Elevator elevator;
     private GameObject lockableObj;
 
     public Button interactButton;
@@ -144,18 +145,26 @@ public class PlayerController : MonoBehaviour {
                 interactButton.gameObject.SetActive(true);
             } else
             {
+                theObj = null;
+                interactButton.gameObject.SetActive(false);
+
                 if (hit.collider.tag == "Lockable")
                     lockableObj = hit.collider.gameObject;
                 else lockableObj = null;
-                theObj = null;
-                interactButton.gameObject.SetActive(false);
+
+                if(hit.collider.tag == "Elevator")
+                {
+                    elevator = hit.collider.GetComponent<Elevator>();
+                }
             }
 
             if(hit.collider.tag != "Untagged")
             {
-                if(hit.collider.tag != "Lockable")
-                    interactableName.text = hit.collider.name;
-                else interactableName.text = hit.collider.name + " (Locked)";
+                if(hit.collider.tag == "Lockable")
+                    interactableName.text = hit.collider.name + " (Locked)";
+                else if(hit.collider.tag == "Elevator")
+                    interactableName.text = hit.collider.name + Elevator.state;
+                else interactableName.text = hit.collider.name;
             } else
             {
                 interactableName.text = "";

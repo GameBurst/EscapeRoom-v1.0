@@ -8,6 +8,7 @@ TagManager:
   - Lockable
   - Seif
   - OpenByHand
+  - Elevator
   layers:
   - Default
   - TransparentFX

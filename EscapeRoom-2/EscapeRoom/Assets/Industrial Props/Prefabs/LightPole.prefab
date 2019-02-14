@@ -88,6 +88,8 @@ GameObject:
   - component: {fileID: 402778}
   - component: {fileID: 3334590}
   - component: {fileID: 2354406}
+  - component: {fileID: 8902818225366859760}
+  - component: {fileID: 5676535166040054425}
   m_Layer: 0
   m_Name: LightPole
   m_TagString: Untagged
@@ -164,6 +166,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &8902818225366859760
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 33
+  m_Direction: 2
+  m_Center: {x: -2.3916727e-26, y: 0.002013982, z: 15.211467}
+--- !u!54 &5676535166040054425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106198}
+  serializedVersion: 2
+  m_Mass: 15
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &117332
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +207,7 @@ GameObject:
   - component: {fileID: 461946}
   - component: {fileID: 3354484}
   - component: {fileID: 2307094}
+  - component: {fileID: 4892945040879546862}
   m_Layer: 0
   m_Name: Cube.043
   m_TagString: Untagged
@@ -241,6 +274,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4892945040879546862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.9999998, z: 1.9999998}
+  m_Center: {x: 0, y: -0.000006854534, z: -0.000015258789}
 --- !u!1 &128096
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +529,7 @@ GameObject:
   - component: {fileID: 425132}
   - component: {fileID: 3396154}
   - component: {fileID: 2387352}
+  - component: {fileID: 1584856819897323707}
   m_Layer: 0
   m_Name: Cylinder.057
   m_TagString: Untagged
@@ -549,6 +596,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1584856819897323707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.376932, y: 2.3745382, z: 18.536161}
+  m_Center: {x: 0.0000000018626451, y: 0.0023973056, z: 0.7794369}
 --- !u!1 &168264
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +697,7 @@ GameObject:
   - component: {fileID: 484298}
   - component: {fileID: 3337720}
   - component: {fileID: 2317150}
+  - component: {fileID: 5108513627904696412}
   m_Layer: 0
   m_Name: Cylinder.058
   m_TagString: Untagged
@@ -703,6 +764,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5108513627904696412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.376932, y: 2.3745382, z: 18.536161}
+  m_Center: {x: 1.2610953e-24, y: 0.002397231, z: 0.77940637}
 --- !u!1 &183694
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +819,7 @@ GameObject:
   - component: {fileID: 401502}
   - component: {fileID: 3319784}
   - component: {fileID: 2304794}
+  - component: {fileID: 8667256715085815733}
   m_Layer: 0
   m_Name: Cylinder.059
   m_TagString: Untagged
@@ -811,6 +886,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8667256715085815733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.376932, y: 2.3745382, z: 18.536161}
+  m_Center: {x: 1.2610953e-24, y: 0.002397231, z: 0.77940637}
 --- !u!1 &198302
 GameObject:
   m_ObjectHideFlags: 0
