@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, minDist))
         {
-            if(hit.collider.tag != "Untagged" && hit.collider.tag != "Lockable")
+            if(hit.collider.tag != "Untagged" && hit.collider.tag != "Lockable" && hit.collider.tag != "Elevator")
             {
                 theObj = hit.collider.GetComponent<InterObjjj>();
                 interactButton.gameObject.SetActive(true);
@@ -154,6 +154,8 @@ public class PlayerController : MonoBehaviour {
 
                 if(hit.collider.tag == "Elevator")
                 {
+                    if(Elevator.state == " (No button)")
+                        lockableObj = hit.collider.gameObject;
                     elevator = hit.collider.GetComponent<Elevator>();
                 }
             }

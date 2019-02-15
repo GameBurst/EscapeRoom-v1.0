@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 2385658}
   - component: {fileID: 2152509811162730911}
   m_Layer: 0
-  m_Name: mesh
+  m_Name: Locker door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

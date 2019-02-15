@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    public GameObject fuze;
+    public GameObject lever;
 
     public static string state;
 
@@ -12,12 +12,5 @@ public class Elevator : MonoBehaviour
     void Start()
     {
         state = " (No power)";
-        fuze.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
