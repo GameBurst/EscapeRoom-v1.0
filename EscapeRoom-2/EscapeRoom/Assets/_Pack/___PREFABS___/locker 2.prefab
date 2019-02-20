@@ -133,6 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403240}
+  - component: {fileID: 1174771176301036330}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -156,6 +157,25 @@ Transform:
   m_Father: {fileID: 472876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1174771176301036330
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165908}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d39ea40e7cb1d854a9d7076e3904ca4d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &182322
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,9 +188,10 @@ GameObject:
   - component: {fileID: 3319684}
   - component: {fileID: 2385658}
   - component: {fileID: 2152509811162730911}
+  - component: {fileID: 1049860254881357583}
   m_Layer: 0
   m_Name: Locker door
-  m_TagString: Untagged
+  m_TagString: OpenByHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,6 +268,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5687999, y: 2.1863997, z: 0.0051000114}
   m_Center: {x: 0, y: 1.1305999, z: 0.27444997}
+--- !u!114 &1049860254881357583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dc39f3cb1b040468892ac1f6b74f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 182322}
+  animator: {fileID: 1174771176301036330}
+  force: {x: 0, y: 0, z: 0}
 --- !u!1 &190986
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +370,7 @@ BoxCollider:
   m_GameObject: {fileID: 190986}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.037299987, y: 0.23810004, z: 0.026499985}
   m_Center: {x: -0.21256524, y: 1.1584423, z: 0.29314998}
