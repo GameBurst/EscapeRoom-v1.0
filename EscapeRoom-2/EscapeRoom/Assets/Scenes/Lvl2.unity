@@ -944,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4514376449749658, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4514376449749658, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -997,6 +997,14 @@ PrefabInstance:
     - target: {fileID: 1840580049664790, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_Name
       value: Projects Room door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287407895054720, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287407895054720, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.6775
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
@@ -5294,7 +5302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107404, guid: 56a257b08e7d1134394edec5debaa2a6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 404704, guid: 56a257b08e7d1134394edec5debaa2a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5342,7 +5350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 180004, guid: 56a257b08e7d1134394edec5debaa2a6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a257b08e7d1134394edec5debaa2a6, type: 3}
@@ -28467,7 +28475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4514376449749658, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4514376449749658, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28520,6 +28528,14 @@ PrefabInstance:
     - target: {fileID: 1840580049664790, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
       propertyPath: m_Name
       value: Manager's office door
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287407895054720, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287407895054720, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.685
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e63601319bcb6af4eb29223dd9bc6ff7, type: 3}
@@ -33208,7 +33224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 113766, guid: d8ebd259b2328454fb14e5f4dde1b6f6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: d8ebd259b2328454fb14e5f4dde1b6f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33256,7 +33272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112704, guid: d8ebd259b2328454fb14e5f4dde1b6f6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ebd259b2328454fb14e5f4dde1b6f6, type: 3}
