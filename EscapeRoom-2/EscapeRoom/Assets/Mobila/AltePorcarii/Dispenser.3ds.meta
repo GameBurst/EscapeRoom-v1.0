@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 36b8617e74137054b95fbbc204b27e56
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Back
+    100002: Body
+    100004: Cap_1
+    100006: Cap_2
+    100008: Ceiling
+    100010: Cold_H2O_o
+    100012: Container
+    100014: CWAY_Logo
+    100016: //RootNode
+    100018: Dispenser
+    100020: Extrude_NU
+    100022: Floor
+    100024: Hot_H2O_Ou
+    100026: Left_Wall
+    100028: Light
+    100030: Light_1
+    100032: Light_2
+    100034: Right_Wall
+    100036: Support
+    100038: Tube
+    100040: Tube_1
+    100042: Tube_2
+    100044: Tube_3
+    100046: Tube_4
+    100048: Water
+    400000: Back
+    400002: Body
+    400004: Cap_1
+    400006: Cap_2
+    400008: Ceiling
+    400010: Cold_H2O_o
+    400012: Container
+    400014: CWAY_Logo
+    400016: Dispenser
+    400018: //RootNode
+    400020: Extrude_NU
+    400022: Floor
+    400024: Hot_H2O_Ou
+    400026: Left_Wall
+    400028: Light
+    400030: Light_1
+    400032: Light_2
+    400034: Right_Wall
+    400036: Support
+    400038: Tube
+    400040: Tube_1
+    400042: Tube_2
+    400044: Tube_3
+    400046: Tube_4
+    400048: Water
+    2100000: Mat
+    2100002: Mat.12
+    2100004: water
+    2100006: Disp. Plastic
+    2100008: Mat.11
+    2100010: Mat.2
+    2300000: Back
+    2300002: Body
+    2300004: Cap_1
+    2300006: Cap_2
+    2300008: Ceiling
+    2300010: Cold_H2O_o
+    2300012: Container
+    2300014: CWAY_Logo
+    2300016: Dispenser
+    2300018: Extrude_NU
+    2300020: Floor
+    2300022: Hot_H2O_Ou
+    2300024: Left_Wall
+    2300026: Right_Wall
+    2300028: Support
+    2300030: Tube
+    2300032: Tube_1
+    2300034: Tube_2
+    2300036: Tube_3
+    2300038: Tube_4
+    2300040: Water
+    3300000: Back
+    3300002: Body
+    3300004: Cap_1
+    3300006: Cap_2
+    3300008: Ceiling
+    3300010: Cold_H2O_o
+    3300012: Container
+    3300014: CWAY_Logo
+    3300016: Dispenser
+    3300018: Extrude_NU
+    3300020: Floor
+    3300022: Hot_H2O_Ou
+    3300024: Left_Wall
+    3300026: Right_Wall
+    3300028: Support
+    3300030: Tube
+    3300032: Tube_1
+    3300034: Tube_2
+    3300036: Tube_3
+    3300038: Tube_4
+    3300040: Water
+    4300000: Back
+    4300002: Right_Wall
+    4300004: Left_Wall
+    4300006: Ceiling
+    4300008: Floor
+    4300010: Dispenser
+    4300012: Water
+    4300014: Support
+    4300016: Container
+    4300018: CWAY_Logo
+    4300020: Extrude_NU
+    4300022: Cap_1
+    4300024: Cap_2
+    4300026: Tube_4
+    4300028: Hot_H2O_Ou
+    4300030: Tube_2
+    4300032: Tube_1
+    4300034: Cold_H2O_o
+    4300036: Tube_3
+    4300038: Tube
+    4300040: Body
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
