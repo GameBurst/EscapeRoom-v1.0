@@ -3,6 +3,19 @@ guid: 90edc576c4d8eb74ba0c2cc0f960a0f8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: VRayPlane01
+    100004: "\u041F\u0430\u043F\u043A\u0430007"
+    400000: //RootNode
+    400002: VRayPlane01
+    400004: "\u041F\u0430\u043F\u043A\u0430007"
+    2100000: 12 - Default
+    2100002: Default
+    2100004: 'Material #34'
+    2300000: "\u041F\u0430\u043F\u043A\u0430007"
+    3300000: "\u041F\u0430\u043F\u043A\u0430007"
+    4300000: "\u041F\u0430\u043F\u043A\u0430007"
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +70,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

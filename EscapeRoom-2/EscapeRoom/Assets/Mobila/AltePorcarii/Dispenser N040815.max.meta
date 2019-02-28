@@ -3,6 +3,87 @@ guid: 1795a22fe9107024bb530cc73b77d65f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
+    100000: Body
+    100002: Cap_1
+    100004: Cap_2
+    100006: Cold_H2O_o
+    100008: Container
+    100010: CWAY_Logo
+    100012: Dispenser
+    100014: //RootNode
+    100016: Extrude_NU
+    100018: Group01
+    100020: Hot_H2O_Ou
+    100022: Support
+    100024: Tube
+    100026: Tube_1
+    100028: Tube_2
+    100030: Tube_3
+    100032: Tube_4
+    100034: VRayPlane01
+    100036: Water
+    400000: Body
+    400002: Cap_1
+    400004: Cap_2
+    400006: Cold_H2O_o
+    400008: Container
+    400010: CWAY_Logo
+    400012: Dispenser
+    400014: //RootNode
+    400016: Extrude_NU
+    400018: Group01
+    400020: Hot_H2O_Ou
+    400022: Support
+    400024: Tube
+    400026: Tube_1
+    400028: Tube_2
+    400030: Tube_3
+    400032: Tube_4
+    400034: VRayPlane01
+    400036: Water
+    2100000: 'Material #29'
+    2100002: Mat.2
+    2100004: 'Material #30'
+    2100006: 'Material #27'
+    2100008: Mat.11
+    2100010: 'Material #31'
+    2300000: Body
+    2300002: Cap_1
+    2300004: Cap_2
+    2300006: Container
+    2300008: Extrude_NU
+    2300010: Support
+    2300012: Tube
+    2300014: Tube_1
+    2300016: Tube_2
+    2300018: Tube_3
+    2300020: Tube_4
+    2300022: Water
+    3300000: Body
+    3300002: Cap_1
+    3300004: Cap_2
+    3300006: Container
+    3300008: Extrude_NU
+    3300010: Support
+    3300012: Tube
+    3300014: Tube_1
+    3300016: Tube_2
+    3300018: Tube_3
+    3300020: Tube_4
+    3300022: Water
+    4300000: Water
+    4300002: Support
+    4300004: Container
+    4300006: Extrude_NU
+    4300008: Cap_1
+    4300010: Cap_2
+    4300012: Tube_4
+    4300014: Tube_2
+    4300016: Tube_1
+    4300018: Tube_3
+    4300020: Tube
+    4300022: Body
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -57,7 +138,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
