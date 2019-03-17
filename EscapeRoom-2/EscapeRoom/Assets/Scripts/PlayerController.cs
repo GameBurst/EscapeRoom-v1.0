@@ -139,6 +139,8 @@ public class PlayerController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, minDist))
         {
+            if (Input.GetKey(KeyCode.A))
+                print(hit.collider);
             if(hit.collider.tag != "Untagged" && hit.collider.tag != "Lockable" && hit.collider.tag != "Elevator")
             {
                 theObj = hit.collider.GetComponent<InterObjjj>();
