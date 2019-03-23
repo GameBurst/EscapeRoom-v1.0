@@ -2963,7 +2963,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &155910006
 Transform:
@@ -4285,6 +4285,10 @@ PrefabInstance:
     - target: {fileID: 1697036350976854, guid: 1ca1659484765404e997621d5d4ef618, type: 3}
       propertyPath: m_Name
       value: Book9 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697036350976854, guid: 1ca1659484765404e997621d5d4ef618, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4131325815162654, guid: 1ca1659484765404e997621d5d4ef618, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6048,6 +6052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book6
       objectReference: {fileID: 0}
+    - target: {fileID: 1191013887190712, guid: 30210a89226969f47b2db6e52b0fbc30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4883059609391812, guid: 30210a89226969f47b2db6e52b0fbc30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.34
@@ -6908,6 +6916,10 @@ PrefabInstance:
     - target: {fileID: 1151350999581708, guid: 74e6212fb5b3ab84d8df7dfe42786959, type: 3}
       propertyPath: m_Name
       value: Book10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151350999581708, guid: 74e6212fb5b3ab84d8df7dfe42786959, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4397084937974192, guid: 74e6212fb5b3ab84d8df7dfe42786959, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9292,6 +9304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookSet2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1219609485218594, guid: f86e4cd5574369b4f8d52f553f074223, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4446816497190662, guid: f86e4cd5574369b4f8d52f553f074223, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.582417
@@ -9367,6 +9383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laptop
       objectReference: {fileID: 0}
+    - target: {fileID: 1716111664439686, guid: d95dfe9eeea7731489064565a2d8b306, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4909941690500726, guid: d95dfe9eeea7731489064565a2d8b306, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.86469
@@ -9423,6 +9443,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1451490347123022, guid: d95dfe9eeea7731489064565a2d8b306, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028298447856264, guid: d95dfe9eeea7731489064565a2d8b306, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95dfe9eeea7731489064565a2d8b306, type: 3}
 --- !u!4 &461343966 stripped
@@ -9441,6 +9469,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 094627802cc8b7849aed1eb1a64bbe75, type: 3}
       propertyPath: m_Name
       value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 094627802cc8b7849aed1eb1a64bbe75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 094627802cc8b7849aed1eb1a64bbe75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12381,6 +12413,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15391,6 +15431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book9
       objectReference: {fileID: 0}
+    - target: {fileID: 1697036350976854, guid: 1ca1659484765404e997621d5d4ef618, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4131325815162654, guid: 1ca1659484765404e997621d5d4ef618, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.33
@@ -15703,6 +15747,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17174,6 +17226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book1
       objectReference: {fileID: 0}
+    - target: {fileID: 1378627422154138, guid: 97c77a45786cb4c4ca727df16b4fcf7a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4503412377857012, guid: 97c77a45786cb4c4ca727df16b4fcf7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.467
@@ -17248,6 +17304,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22870,6 +22934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book2
       objectReference: {fileID: 0}
+    - target: {fileID: 1617504934800246, guid: 97b643d6344809547a759a9fed87c4db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4050216002099554, guid: 97b643d6344809547a759a9fed87c4db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.161
@@ -23491,6 +23559,10 @@ PrefabInstance:
     - target: {fileID: 1728117368571048, guid: 7ee2f4822e69f8d45b4208dc7fd37f95, type: 3}
       propertyPath: m_Name
       value: RFAIPP_Office_Table (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1728117368571048, guid: 7ee2f4822e69f8d45b4208dc7fd37f95, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4473781729276122, guid: 7ee2f4822e69f8d45b4208dc7fd37f95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27364,6 +27436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookSet1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1305577004302204, guid: 3ce5d05351769ef42901377fbc6bfd54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4787178593945700, guid: 3ce5d05351769ef42901377fbc6bfd54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.59646
@@ -28017,6 +28093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookSet2
       objectReference: {fileID: 0}
+    - target: {fileID: 1219609485218594, guid: f86e4cd5574369b4f8d52f553f074223, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4446816497190662, guid: f86e4cd5574369b4f8d52f553f074223, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.495113
@@ -28503,6 +28583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookSet1
       objectReference: {fileID: 0}
+    - target: {fileID: 1305577004302204, guid: 3ce5d05351769ef42901377fbc6bfd54, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4787178593945700, guid: 3ce5d05351769ef42901377fbc6bfd54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.494583
@@ -28804,6 +28888,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSocket (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.3
@@ -28879,9 +28971,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Sculpture
       objectReference: {fileID: 0}
+    - target: {fileID: 1081779614371078, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4625514048514850, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.26
+      value: 61.15
       objectReference: {fileID: 0}
     - target: {fileID: 4625514048514850, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28889,7 +28985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625514048514850, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 4625514048514850, guid: e3d34be79692ce4468812aa97bacfbdf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -29586,6 +29682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book4
       objectReference: {fileID: 0}
+    - target: {fileID: 1523932130504270, guid: f670e5001ba6fcb4da01df783e279e71, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4405354781589206, guid: f670e5001ba6fcb4da01df783e279e71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.43
@@ -30032,7 +30132,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1333639269
 Transform:
@@ -32624,6 +32724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RFAIPP_Office_Table
       objectReference: {fileID: 0}
+    - target: {fileID: 1728117368571048, guid: 7ee2f4822e69f8d45b4208dc7fd37f95, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4473781729276122, guid: 7ee2f4822e69f8d45b4208dc7fd37f95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60.94
@@ -34190,6 +34294,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSocket (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -125.68
@@ -34341,6 +34453,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36301,6 +36421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book8
       objectReference: {fileID: 0}
+    - target: {fileID: 1101610762666532, guid: ac746f2516852a146948c5d9961ade47, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4808684933931192, guid: ac746f2516852a146948c5d9961ade47, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.35
@@ -36719,7 +36843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1719273110
 GameObject:
@@ -38342,6 +38466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book2
       objectReference: {fileID: 0}
+    - target: {fileID: 1617504934800246, guid: 97b643d6344809547a759a9fed87c4db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4050216002099554, guid: 97b643d6344809547a759a9fed87c4db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.465
@@ -38487,6 +38615,10 @@ PrefabInstance:
     - target: {fileID: 1349339299352870, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
       propertyPath: m_Name
       value: Book7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349339299352870, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4557509483239968, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42344,6 +42476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book7
       objectReference: {fileID: 0}
+    - target: {fileID: 1349339299352870, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4557509483239968, guid: 7ee3669ee9a0930419ec9775fa134e97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.36
@@ -42622,6 +42758,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43808,6 +43952,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_Name
       value: WallSocket (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 60bdc2f5ea259ab4dafc659bbc0cd4c3, type: 3}
       propertyPath: m_LocalPosition.x
